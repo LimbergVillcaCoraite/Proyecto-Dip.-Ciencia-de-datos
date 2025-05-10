@@ -1,5 +1,3 @@
-# Proyecto-Dip.-Ciencia-de-datos
-Archivos fuentes del proyecto de ciencia de datos, incluye tambien el notebook y el tableau
 # 🎓 Proyecto de Ciencia de Datos: Análisis y predicción del bajo rendimiento académico en la unidad educativa San José Obrero
 
 ### Autor: Limberg Villca Coraite
