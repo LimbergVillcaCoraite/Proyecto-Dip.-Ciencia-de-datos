@@ -34,14 +34,13 @@ Este proyecto aplica técnicas de *machine learning* para predecir la probabilid
 ## 🗂️ Estructura del Proyecto
 ```
 proyecto_ciencia_datos/
-├── /Proyecto-Dip.-Ciencia-de-datos/
-├── /Proyecto-Dip.-Ciencia-de-datos/README.md
-├── /Proyecto-Dip.-Ciencia-de-datos/requirements.txt
-├── /Proyecto-Dip.-Ciencia-de-datos/Codigo fuente
-├── /Proyecto-Dip.-Ciencia-de-datos/Documentos
-├── /Proyecto-Dip.-Ciencia-de-datos/Gráficos
-└── /Proyecto-Dip.-Ciencia-de-datos/data-source/
-
+├── /Proyecto-Dip.-Ciencia-de-datos/ -> Carpeta principal
+├── /Proyecto-Dip.-Ciencia-de-datos/README.md -> Instrucciones del proyecto
+├── /Proyecto-Dip.-Ciencia-de-datos/requirements.txt -> Bibliotecas principales a instalar
+├── /Proyecto-Dip.-Ciencia-de-datos/Codigo fuente -> Carpeta que contiene el código fuente
+├── /Proyecto-Dip.-Ciencia-de-datos/Documentos -> Carpeta que contiene el proyecto y su presentación en power point
+├── /Proyecto-Dip.-Ciencia-de-datos/Gráficos -> Contine el proyecto en Tableau y gráficos importantes
+└── /Proyecto-Dip.-Ciencia-de-datos/data-source/ -> Contiene los archivos con los datos necesarios para este proyecto
 ```
 
 ---
@@ -69,10 +68,22 @@ pip install -r requirements.txt
 ```bash
 jupyter notebook ./Codigo fuente/proyecto_ciencia_de_datos.ipynb
 
-**También puedes ejecutarlo directamente en Google Colab:**  
-🔗 [https://colab.research.google.com/drive/1zkWX89JU6IW6N8T1Umz4BIQFn2K_l-LI](https://colab.research.google.com/drive/1zkWX89JU6IW6N8T1Umz4BIQFn2K_l-LI?usp=sharing)
+---
+**También se puede ejecutar directamente en Google Colab:**  
 
-```
+### 🧪 Ejecutar en Google Colab
+
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1zkWX89JU6IW6N8T1Umz4BIQFn2K_l-LI?usp=sharing)
+
+---
+
+### 🖥️ Opción alternativa
+
+También se puede **clonar el repositorio** y ejecutar el notebook directamente, ya que los datos necesarios se encuentran incluidos en el mismo.
+
+📁 Repositorio: [https://github.com/LimbergVillcaCoraite/Proyecto-Dip.-Ciencia-de-datos](https://github.com/LimbergVillcaCoraite/Proyecto-Dip.-Ciencia-de-datos)
+
+---
 
 ---
 
