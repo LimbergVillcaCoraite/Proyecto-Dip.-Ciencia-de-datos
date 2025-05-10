@@ -67,7 +67,7 @@ pip install -r requirements.txt
 4. **Abre el cuaderno Jupyter**
 ```bash
 jupyter notebook ./Codigo fuente/proyecto_ciencia_de_datos.ipynb
-
+```
 ---
 **También se puede ejecutar directamente en Google Colab:**  
 
