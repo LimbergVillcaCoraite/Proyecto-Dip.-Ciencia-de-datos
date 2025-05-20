@@ -20,7 +20,7 @@ Este proyecto aplica técnicas de *machine learning* para predecir la probabilid
 ---
 ## ✅ Modelos probados
 - Logistic Regression
-- XGBoost
+- Random Forest
 - XGBoost
 - Gradient Boosting
 - SVM
