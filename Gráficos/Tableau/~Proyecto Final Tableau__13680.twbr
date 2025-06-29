@@ -28,29 +28,29 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='datos_personales' name='excel-direct.10al0qn0pfnnjr1eftf401x6m9ih'>
-            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='Data/Salidas del programa/datos_personales.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='L:/Materiales cursos y diplomados/datascience/Notas San Jose Obrero/Proyecto-Dip.-Ciencia-de-datos/data-source/Salidas del programa/datos_personales.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='calificaciones' name='excel-direct.1az1p1r0dtourc15snssn0euyjz0'>
-            <connection class='excel-direct' cleaning='yes' compat='no' dataRefreshTime='' filename='Data/Salidas del programa/calificaciones.xlsx' interpretationMode='1' password='' server='' validate='no' workgroup-auth-mode='as-is' />
+            <connection class='excel-direct' cleaning='yes' compat='no' dataRefreshTime='' filename='L:/Materiales cursos y diplomados/datascience/Notas San Jose Obrero/Proyecto-Dip.-Ciencia-de-datos/data-source/Salidas del programa/calificaciones.xlsx' interpretationMode='1' password='' server='' validate='no' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='predicciones_completas_proximo_año' name='textscan.1gy0iq907j2kxu1f62qfv028zyz3'>
-            <connection class='textscan' directory='Data/Salidas del programa' filename='predicciones_completas_proximo_año.csv' password='' server='' />
+            <connection class='textscan' directory='L:/Materiales cursos y diplomados/datascience/Notas San Jose Obrero/Proyecto-Dip.-Ciencia-de-datos/data-source/Salidas del programa' filename='predicciones_completas_proximo_año.csv' password='' server='' />
           </named-connection>
           <named-connection caption='tabla_minable' name='textscan.1lvcpi51h8sjeq1h4go0d1slcw7j'>
-            <connection class='textscan' directory='Data/Salidas del programa' filename='tabla_minable.csv' password='' server='' />
+            <connection class='textscan' directory='L:/Materiales cursos y diplomados/datascience/Notas San Jose Obrero/Proyecto-Dip.-Ciencia-de-datos/data-source/Salidas del programa' filename='tabla_minable.csv' password='' server='' />
           </named-connection>
           <named-connection caption='historico_y_predicciones_estudiantes' name='textscan.0gv764t00b1x8k0znl83z0dp1hew'>
-            <connection class='textscan' directory='Data/Salidas del programa' filename='historico_y_predicciones_estudiantes.csv' password='' server='' />
+            <connection class='textscan' directory='L:/Materiales cursos y diplomados/datascience/Notas San Jose Obrero/Proyecto-Dip.-Ciencia-de-datos/data-source/Salidas del programa' filename='historico_y_predicciones_estudiantes.csv' password='' server='' />
           </named-connection>
           <named-connection caption='pedicciones_futuras_detalladas' name='textscan.0h7jzgq02xwouy1h5hzas09wbj1n'>
-            <connection class='textscan' directory='Data/Salidas del programa' filename='pedicciones_futuras_detalladas.csv' password='' server='' />
+            <connection class='textscan' directory='L:/Materiales cursos y diplomados/datascience/Notas San Jose Obrero/Proyecto-Dip.-Ciencia-de-datos/data-source/Salidas del programa' filename='pedicciones_futuras_detalladas.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <relation type='collection'>
           <relation all='true' name='Sheet1+' type='union'>
             <columns header='yes' />
             <relation connection='excel-direct.10al0qn0pfnnjr1eftf401x6m9ih' name='Sheet1' table='[Sheet1$]' type='table'>
-              <columns gridOrigin='A1:I2959:no:A1:I2959:0' header='yes' outcome='2'>
+              <columns gridOrigin='A1:I2959:no:A1:I2959:0' header='yes' lost='0' outcome='2' processed='11447'>
                 <column datatype='integer' name='F1' ordinal='0' />
                 <column datatype='string' name='A. Paterno' ordinal='1' />
                 <column datatype='string' name='A. Materno' ordinal='2' />
@@ -135,17 +135,7 @@
             </relation>
           </relation>
           <relation all='true' name='pedicciones_futuras_detalladas.csv+' type='union'>
-            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-              <column datatype='string' name='Codigo Rude' />
-              <column datatype='integer' name='Gestion' />
-              <column datatype='integer' name='Reprobado_Prediccion' />
-              <column datatype='string' name='Genero' />
-              <column datatype='string' name='Nivel' />
-              <column datatype='string' name='Curso' />
-              <column datatype='integer' name='Promedio' />
-              <column datatype='integer' name='Reprobado' />
-              <column datatype='string' name='Table Name' />
-            </columns>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=',' />
             <relation connection='textscan.0h7jzgq02xwouy1h5hzas09wbj1n' name='pedicciones_futuras_detalladas.csv' table='[pedicciones_futuras_detalladas#csv]' type='table'>
               <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
                 <column datatype='string' name='Codigo Rude' ordinal='0' />
@@ -1492,6 +1482,7 @@
       <column caption='predicciones_completas_proximo_año.csv' datatype='table' name='[__tableau_internal_object_id__].[predicciones_completas_proximo_año.csv_52AF8E1510AF47B6941C43845747B9B8]' role='measure' type='quantitative' />
       <column caption='Reprobados reales y predicciones' datatype='table' name='[__tableau_internal_object_id__].[tabla_minable.csv_8362274F469A4BE9ABDA528995EDE059]' role='measure' type='quantitative' />
       <column-instance column='[Promedio]' derivation='Avg' name='[avg:Promedio:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Pivot Field Values]' derivation='Count' name='[cnt:Pivot Field Values:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Codigo Rude (Sheet11)]' derivation='CountD' name='[ctd:Codigo Rude (Sheet11):qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_28147564776730624]' derivation='None' name='[none:Calculation_28147564776730624:nk]' pivot='key' type='nominal' />
       <column-instance column='[Calculation_855120981409619984]' derivation='None' name='[none:Calculation_855120981409619984:nk]' pivot='key' type='nominal' />
@@ -1503,12 +1494,12 @@
       <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Nivel]' derivation='None' name='[none:Nivel:nk]' pivot='key' type='nominal' />
       <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
-      <column-instance column='[Reprobado_Prediccion]' derivation='None' name='[none:Reprobado_Prediccion:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Crecimiento]' derivation='Sum' name='[sum:Crecimiento:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Gestion]' derivation='Sum' name='[sum:Gestion:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Histórico]' derivation='Sum' name='[sum:Histórico:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Holt]' derivation='Sum' name='[sum:Holt:qk]' pivot='key' type='quantitative' />
       <column-instance column='[MEJOR MODELO]' derivation='Sum' name='[sum:MEJOR MODELO:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Reprobado]' derivation='Sum' name='[sum:Reprobado:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Reprobado_Prediccion]' derivation='Sum' name='[sum:Reprobado_Prediccion:qk]' pivot='key' type='quantitative' />
       <column-instance column='[SARIMA]' derivation='Sum' name='[sum:SARIMA:qk]' pivot='key' type='quantitative' />
@@ -1541,8 +1532,8 @@
           <groupfilter function='level-members' level='[Calculation_28147564776730624]' />
         </groupfilter>
       </group>
-      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='false' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_01v6x3u18utugu13e6e3a0tmqrp3.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='06/03/2025 03:44:23 PM' username='tableau_internal_user'>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_0xh0drw0fjm3vt1c19koy0fgmz81.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='06/16/2025 03:32:59 AM' username='tableau_internal_user'>
           <relation type='collection'>
             <relation name='Sheet1_B0CCCD1C2D3C4E4AB12B3A59027C01BB' table='[Extract].[Sheet1_B0CCCD1C2D3C4E4AB12B3A59027C01BB]' type='table' />
             <relation name='Sheet1_D632D6CDF0A74CA88A163A46689E8A8C' table='[Extract].[Sheet1_D632D6CDF0A74CA88A163A46689E8A8C]' type='table' />
@@ -1934,7 +1925,7 @@
               <family>pedicciones_futuras_detalladas.csv+</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>769</approx-count>
+              <approx-count>754</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
               <object-id>[tabla_minable.csv_8362274F469A4BE9ABDA528995EDE059]</object-id>
@@ -1949,7 +1940,7 @@
               <family>pedicciones_futuras_detalladas.csv+</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>13</approx-count>
+              <approx-count>16</approx-count>
               <contains-null>true</contains-null>
               <object-id>[tabla_minable.csv_8362274F469A4BE9ABDA528995EDE059]</object-id>
             </metadata-record>
@@ -2007,7 +1998,7 @@
               <family>pedicciones_futuras_detalladas.csv+</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>12</approx-count>
+              <approx-count>13</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
               <object-id>[tabla_minable.csv_8362274F469A4BE9ABDA528995EDE059]</object-id>
@@ -2393,7 +2384,7 @@
               <family>historico_y_predicciones_estudiantes.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>13</approx-count>
+              <approx-count>16</approx-count>
               <contains-null>true</contains-null>
               <object-id>[historico_y_predicciones_estudiantes.csv_5210B2C525C54E97AEB1B6C87680D130]</object-id>
             </metadata-record>
@@ -2435,7 +2426,7 @@
               <family>historico_y_predicciones_estudiantes.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>4</approx-count>
+              <approx-count>7</approx-count>
               <contains-null>true</contains-null>
               <object-id>[historico_y_predicciones_estudiantes.csv_5210B2C525C54E97AEB1B6C87680D130]</object-id>
             </metadata-record>
@@ -2449,7 +2440,7 @@
               <family>historico_y_predicciones_estudiantes.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>2</approx-count>
+              <approx-count>3</approx-count>
               <contains-null>true</contains-null>
               <object-id>[historico_y_predicciones_estudiantes.csv_5210B2C525C54E97AEB1B6C87680D130]</object-id>
             </metadata-record>
@@ -2463,7 +2454,7 @@
               <family>historico_y_predicciones_estudiantes.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>4</approx-count>
+              <approx-count>7</approx-count>
               <contains-null>true</contains-null>
               <object-id>[historico_y_predicciones_estudiantes.csv_5210B2C525C54E97AEB1B6C87680D130]</object-id>
             </metadata-record>
@@ -2491,7 +2482,7 @@
               <family>historico_y_predicciones_estudiantes.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>4</approx-count>
+              <approx-count>7</approx-count>
               <contains-null>true</contains-null>
               <object-id>[historico_y_predicciones_estudiantes.csv_5210B2C525C54E97AEB1B6C87680D130]</object-id>
             </metadata-record>
@@ -2764,6 +2755,177 @@
             </map>
             <map to='#f28e2b'>
               <bucket>&quot;NO INCORPORAD&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_855120981409619984:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Aprobados&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Reprobados&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Pivot Field Names:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Edu. Musical&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Art. Plasticas. V.&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Cosmov y&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Psicologia&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Matematica&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Geografia&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Cs. Sociales/Hist&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;E. Fisica. D.&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Quimica&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;T. General/Esp&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Fisica&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Ed. Civica&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Bio./C.Nat&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Val. Esp. Rel&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;L. Extrangera&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Com. Lenguaje&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='shape' field='[none:Pivot Field Names:nk]' type='shape'>
+            <map to='asterisk'>
+              <bucket>&quot;Cosmov y&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;Matematica&quot;</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;L. Extrangera&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;Psicologia&quot;</bucket>
+            </map>
+            <map to='times'>
+              <bucket>&quot;Geografia&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[cnt:Pivot Field Values:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:MEJOR MODELO:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Reprobado_Prediccion:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:SES:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[usr:Calculation_149744688270549004:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy]&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Crecimiento:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Histórico:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Holt:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Reprobado:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Gestion (tabla_minable.csv+):qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:SARIMA:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Gestion:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Pivot Field Values:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[ctd:Codigo Rude (Sheet11):qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Curso:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;5to A&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;1ro A&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;2do B&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;5to B&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;3ro A&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;3ro B&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;6to A&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;4to A&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;1ro B&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;6to B&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;2do A&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Nivel:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Primario&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Secundaria&quot;</bucket>
             </map>
           </encoding>
           <encoding attr='color' field='[none:Calculation_28147564776730624:nk]' type='palette'>
@@ -5489,147 +5651,6 @@
               <bucket>&quot;ZEYNEP SOLIZ PEÑA&quot;</bucket>
             </map>
           </encoding>
-          <encoding attr='color' field='[none:Nivel:nk]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;Primario&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Secundaria&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:Calculation_855120981409619984:nk]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;Aprobados&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Reprobados&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:Pivot Field Names:nk]' type='palette'>
-            <map to='#499894'>
-              <bucket>&quot;Edu. Musical&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;Art. Plasticas. V.&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;Cosmov y&quot;</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;Psicologia&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;Matematica&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;Geografia&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;Cs. Sociales/Hist&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;E. Fisica. D.&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;Quimica&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;T. General/Esp&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;Fisica&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;Ed. Civica&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Bio./C.Nat&quot;</bucket>
-            </map>
-            <map to='#fabfd2'>
-              <bucket>&quot;Val. Esp. Rel&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;L. Extrangera&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;Com. Lenguaje&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='shape' field='[none:Pivot Field Names:nk]' type='shape'>
-            <map to='asterisk'>
-              <bucket>&quot;Cosmov y&quot;</bucket>
-            </map>
-            <map to='circle'>
-              <bucket>&quot;Matematica&quot;</bucket>
-            </map>
-            <map to='plus'>
-              <bucket>&quot;L. Extrangera&quot;</bucket>
-            </map>
-            <map to='square'>
-              <bucket>&quot;Psicologia&quot;</bucket>
-            </map>
-            <map to='times'>
-              <bucket>&quot;Geografia&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[:Measure Names]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Reprobado_Prediccion:qk]&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:MEJOR MODELO:qk]&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Reprobado_Prediccion:qk]&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:SES:qk]&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[usr:Calculation_149744688270549004:qk]&quot;</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy]&quot;</bucket>
-            </map>
-            <map to='#9c755f'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Crecimiento:qk]&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Histórico:qk]&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Holt:qk]&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Reprobado:qk]&quot;</bucket>
-            </map>
-            <map to='#edc948'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Gestion (tabla_minable.csv+):qk]&quot;</bucket>
-            </map>
-            <map to='#edc948'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:SARIMA:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Gestion:qk]&quot;</bucket>
-            </map>
-            <map to='#ff9da7'>
-              <bucket>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[ctd:Codigo Rude (Sheet11):qk]&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:Curso:nk]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;1ro A&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;1ro B&quot;</bucket>
-            </map>
-          </encoding>
         </style-rule>
       </style>
       <semantic-values>
@@ -5664,7 +5685,7 @@
               <relation all='true' name='Sheet1+' type='union'>
                 <columns header='yes' />
                 <relation connection='excel-direct.10al0qn0pfnnjr1eftf401x6m9ih' name='Sheet1' table='[Sheet1$]' type='table'>
-                  <columns gridOrigin='A1:I2959:no:A1:I2959:0' header='yes' outcome='2'>
+                  <columns gridOrigin='A1:I2959:no:A1:I2959:0' header='yes' lost='0' outcome='2' processed='11447'>
                     <column datatype='integer' name='F1' ordinal='0' />
                     <column datatype='string' name='A. Paterno' ordinal='1' />
                     <column datatype='string' name='A. Materno' ordinal='2' />
@@ -5844,17 +5865,7 @@
           <object caption='Reprobados reales y predicciones' id='tabla_minable.csv_8362274F469A4BE9ABDA528995EDE059'>
             <properties context=''>
               <relation all='true' name='pedicciones_futuras_detalladas.csv+' type='union'>
-                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='string' name='Codigo Rude' />
-                  <column datatype='integer' name='Gestion' />
-                  <column datatype='integer' name='Reprobado_Prediccion' />
-                  <column datatype='string' name='Genero' />
-                  <column datatype='string' name='Nivel' />
-                  <column datatype='string' name='Curso' />
-                  <column datatype='integer' name='Promedio' />
-                  <column datatype='integer' name='Reprobado' />
-                  <column datatype='string' name='Table Name' />
-                </columns>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=',' />
                 <relation connection='textscan.0h7jzgq02xwouy1h5hzas09wbj1n' name='pedicciones_futuras_detalladas.csv' table='[pedicciones_futuras_detalladas#csv]' type='table'>
                   <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
                     <column datatype='string' name='Codigo Rude' ordinal='0' />
@@ -5974,6 +5985,24 @@
         <param name='target' value='Climax1' />
       </command>
     </action>
+    <action caption='Filter 6 (generated)' name='[Action7_5FC5065D059C4D1B88B329B0A0D8DE91]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Climax 2' type='sheet' worksheet='Pred.ReprobadosPorAño' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='ProyeccionCantidadDeEstudiantes' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Climax 2' />
+      </command>
+    </action>
+    <action caption='Filter 7 (generated)' name='[Action8_F1536FFEEAB34BA5A00E31470171C427]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Climax 2' type='sheet' worksheet='Prediccion' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='ProyeccionCantidadDeEstudiantes' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Climax 2' />
+      </command>
+    </action>
   </actions>
   <worksheets>
     <worksheet name='%ReprobadoPorAño'>
@@ -6066,8 +6095,10 @@
               <calculation class='tableau' formula='// Cuenta estudiantes únicos con estado &apos;REPROBADO&apos;&#13;&#10;COUNT(IF [Estado Matricula] = &apos;REPROBADO&apos; THEN [Codigo Rude (Sheet11)] END)&#13;&#10;&#13;&#10;/&#13;&#10;&#13;&#10;// Divide por el total de estudiantes únicos&#13;&#10;COUNT([Codigo Rude (Sheet11)])' />
             </column>
             <column datatype='string' name='[Estado Matricula]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Genero]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Gestion (pedicciones_futuras_detalladas.csv+)]' role='measure' type='quantitative' />
             <column datatype='string' name='[Nivel]' role='dimension' type='nominal' />
+            <column-instance column='[Genero]' derivation='None' name='[none:Genero:nk]' pivot='key' type='nominal' />
             <column-instance column='[Gestion (pedicciones_futuras_detalladas.csv+)]' derivation='None' name='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' pivot='key' type='ordinal' />
             <column-instance column='[Calculation_855120981392605197]' derivation='User' name='[usr:Calculation_855120981392605197:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_855120981392797710]' derivation='User' name='[usr:Calculation_855120981392797710:qk]' pivot='key' type='quantitative' />
@@ -6083,9 +6114,16 @@
           <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Gestion (pedicciones_futuras_detalladas.csv+))]'>
             <groupfilter function='level-members' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' user:ui-action-filter='[Action6_757852A557DC46588886AE9E173F73AD]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Genero:nk]' member='&quot;F&quot;' />
+              <groupfilter function='member' level='[none:Genero:nk]' member='&quot;M&quot;' />
+            </groupfilter>
+          </filter>
           <slices>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[:Measure Names]</column>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Gestion (pedicciones_futuras_detalladas.csv+))]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -6136,17 +6174,18 @@
             <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
             <column-instance column='[Codigo Rude (Sheet11)]' derivation='CountD' name='[ctd:Codigo Rude (Sheet11):qk]' pivot='key' type='quantitative' />
             <column-instance column='[Estado Matricula]' derivation='None' name='[none:Estado Matricula:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Genero]' derivation='None' name='[none:Genero:nk]' pivot='key' type='nominal' />
             <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Genero)]'>
-            <groupfilter function='level-members' level='[Genero]' user:ui-action-filter='[Action3_4DAB63A4BEAC40879E693367E1CBA112]' user:ui-enumeration='all' user:ui-marker='enumerate' />
-          </filter>
           <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]'>
             <groupfilter function='level-members' level='[none:Estado Matricula:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]'>
+            <groupfilter function='level-members' level='[none:Genero:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <slices>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]</column>
-            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Genero)]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -6180,11 +6219,11 @@
       </table>
       <simple-id uuid='{42CF55F9-04F9-4FDE-A9EF-74D244D1C568}' />
     </worksheet>
-    <worksheet name='Cantidad de estudiantes por año (2)'>
+    <worksheet name='Cantidad-est-reprobados'>
       <layout-options>
         <title>
           <formatted-text>
-            <run fontalignment='1'>Estudiantes por Gestión</run>
+            <run fontalignment='1'>Estudiantes reprobados por Gestión</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -6265,6 +6304,7 @@
           <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
             <column datatype='string' name='[Curso]' role='dimension' type='nominal' />
             <column datatype='string' name='[Estado Matricula]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Genero]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
             <column datatype='string' name='[Nivel]' role='dimension' type='nominal' />
             <column caption='Materias' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
@@ -6272,6 +6312,7 @@
             <column-instance column='[Pivot Field Values]' derivation='Avg' name='[avg:Pivot Field Values:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Curso]' derivation='None' name='[none:Curso:nk]' pivot='key' type='nominal' />
             <column-instance column='[Estado Matricula]' derivation='None' name='[none:Estado Matricula:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Genero]' derivation='None' name='[none:Genero:nk]' pivot='key' type='nominal' />
             <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Nivel]' derivation='None' name='[none:Nivel:nk]' pivot='key' type='nominal' />
             <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
@@ -6282,6 +6323,12 @@
           </filter>
           <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]'>
             <groupfilter function='level-members' level='[none:Estado Matricula:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Genero:nk]' member='&quot;F&quot;' />
+              <groupfilter function='member' level='[none:Genero:nk]' member='&quot;M&quot;' />
+            </groupfilter>
           </filter>
           <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' included-values='in-range'>
             <min>2015</min>
@@ -6301,6 +6348,7 @@
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]</column>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]</column>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -6346,14 +6394,31 @@
           </datasources>
           <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
             <column datatype='string' name='[Codigo Rude (Sheet11)]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Curso]' role='dimension' type='nominal' />
             <column datatype='string' name='[Estado Matricula]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
             <column datatype='string' name='[Nivel]' role='dimension' type='nominal' />
             <column-instance column='[Codigo Rude (Sheet11)]' derivation='CountD' name='[ctd:Codigo Rude (Sheet11):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Curso]' derivation='None' name='[none:Curso:nk]' pivot='key' type='nominal' />
             <column-instance column='[Estado Matricula]' derivation='None' name='[none:Estado Matricula:nk]' pivot='key' type='nominal' />
             <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Nivel]' derivation='None' name='[none:Nivel:nk]' pivot='key' type='nominal' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;1ro A&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;1ro B&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;2do A&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;2do B&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;3ro A&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;3ro B&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;4to A&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;5to A&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;5to B&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;6to A&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;6to B&quot;' />
+            </groupfilter>
+          </filter>
           <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]'>
             <groupfilter function='level-members' level='[none:Estado Matricula:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
@@ -6366,6 +6431,7 @@
           <slices>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]</column>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -6415,12 +6481,14 @@
           <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
             <column datatype='string' name='[Codigo Rude (Sheet11)]' role='dimension' type='nominal' />
             <column datatype='string' name='[Curso]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Genero]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
             <column datatype='string' name='[Nivel]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Promedio]' role='measure' type='quantitative' />
             <column-instance column='[Promedio]' derivation='Avg' name='[avg:Promedio:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Codigo Rude (Sheet11)]' derivation='CountD' name='[ctd:Codigo Rude (Sheet11):qk]' pivot='key' type='quantitative' />
             <column-instance column='[Curso]' derivation='None' name='[none:Curso:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Genero]' derivation='None' name='[none:Genero:nk]' pivot='key' type='nominal' />
             <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:ok]' pivot='key' type='ordinal' />
             <column-instance column='[Nivel]' derivation='None' name='[none:Nivel:nk]' pivot='key' type='nominal' />
           </datasource-dependencies>
@@ -6430,6 +6498,12 @@
           <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]'>
             <groupfilter function='member' level='[none:Curso:nk]' member='&quot;1ro A&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Genero:nk]' member='&quot;F&quot;' />
+              <groupfilter function='member' level='[none:Genero:nk]' member='&quot;M&quot;' />
+            </groupfilter>
+          </filter>
           <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]'>
             <groupfilter function='level-members' level='[none:Nivel:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
@@ -6437,6 +6511,7 @@
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]</column>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]</column>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -6473,6 +6548,82 @@
       </table>
       <simple-id uuid='{5E97D72A-5F90-40BF-8B7F-C9AF7FF3973C}' />
     </worksheet>
+    <worksheet name='Evol. Est-rep'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Evolución del/la estudiante por año</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Proyecto Limberg Villca Coraite' name='federated.0wfqkft0jlfagj1awp0ft1sqdagy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
+            <column datatype='string' name='[A. Materno]' role='dimension' type='nominal' />
+            <column datatype='string' name='[A. Paterno]' role='dimension' type='nominal' />
+            <column caption='Nombre_Completo' datatype='string' name='[Calculation_28147564776730624]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Nombres] + &quot; &quot; + [A. Paterno] + &quot; &quot; + [A. Materno]' />
+            </column>
+            <column datatype='string' name='[Curso]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Estado Matricula]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Nombres]' role='dimension' type='nominal' />
+            <column caption='Materias' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+            <column caption='Notas' datatype='integer' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column-instance column='[Pivot Field Values]' derivation='Count' name='[cnt:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pivot Field Values]' derivation='Min' name='[min:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_28147564776730624]' derivation='None' name='[none:Calculation_28147564776730624:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Curso]' derivation='None' name='[none:Curso:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Estado Matricula]' derivation='None' name='[none:Estado Matricula:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[min:Pivot Field Values:qk]' included-values='in-range'>
+            <min>1</min>
+            <max>50</max>
+          </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]'>
+            <groupfilter function='member' level='[none:Calculation_28147564776730624:nk]' member='&quot;SANTIAGO JUSTINIANO NOGALES&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]'>
+            <groupfilter function='member' level='[none:Estado Matricula:nk]' member='&quot;REPROBADO&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[min:Pivot Field Values:qk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[cnt:Pivot Field Values:qk]' />
+              <text column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' />
+              <text column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Pivot Field Names:nk]</cols>
+      </table>
+      <simple-id uuid='{EBA91B9B-9C2C-4C63-BB93-86B5926ABF21}' />
+    </worksheet>
     <worksheet name='Evol. Estudiante'>
       <layout-options>
         <title>
@@ -6504,7 +6655,7 @@
             <column-instance column='[Nivel]' derivation='None' name='[none:Nivel:nk]' pivot='key' type='nominal' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]'>
-            <groupfilter function='member' level='[none:Calculation_28147564776730624:nk]' member='&quot;ADRIAN YAMBA QUISBERT&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='member' level='[none:Calculation_28147564776730624:nk]' member='&quot;THALIA FERNANDEZ APIRANZAY&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <slices>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]</column>
@@ -6844,84 +6995,6 @@
       </table>
       <simple-id uuid='{3E1E8770-CF38-498A-A1AA-183F01214812}' />
     </worksheet>
-    <worksheet name='PerfilesDeIntervension (3)'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run fontalignment='1'>Estudiantes con peligro de reprobar para los siguientes años</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Proyecto Limberg Villca Coraite' name='federated.0wfqkft0jlfagj1awp0ft1sqdagy' />
-          </datasources>
-          <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
-            <column datatype='string' name='[A. Materno]' role='dimension' type='nominal' />
-            <column datatype='string' name='[A. Paterno]' role='dimension' type='nominal' />
-            <column caption='Nombre_Completo' datatype='string' name='[Calculation_28147564776730624]' role='dimension' type='nominal'>
-              <calculation class='tableau' formula='[Nombres] + &quot; &quot; + [A. Paterno] + &quot; &quot; + [A. Materno]' />
-            </column>
-            <column datatype='string' name='[Codigo Rude (pedicciones_futuras_detalladas.csv+)]' role='dimension' type='nominal' />
-            <column datatype='integer' name='[Gestion (pedicciones_futuras_detalladas.csv+)]' role='measure' type='quantitative' />
-            <column datatype='string' name='[Nombres]' role='dimension' type='nominal' />
-            <column caption='Reprobado Prediccion' datatype='integer' name='[Reprobado_Prediccion]' role='measure' type='quantitative' />
-            <column-instance column='[Calculation_28147564776730624]' derivation='None' name='[none:Calculation_28147564776730624:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Codigo Rude (pedicciones_futuras_detalladas.csv+)]' derivation='None' name='[none:Codigo Rude (pedicciones_futuras_detalladas.csv+):nk]' pivot='key' type='nominal' />
-            <column-instance column='[Gestion (pedicciones_futuras_detalladas.csv+)]' derivation='None' name='[none:Gestion (pedicciones_futuras_detalladas.csv+):qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Reprobado_Prediccion]' derivation='None' name='[none:Reprobado_Prediccion:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Gestion (pedicciones_futuras_detalladas.csv+)]' derivation='Sum' name='[sum:Gestion (pedicciones_futuras_detalladas.csv+):qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Reprobado_Prediccion]' derivation='Sum' name='[sum:Reprobado_Prediccion:ok]' pivot='key' type='ordinal' />
-          </datasource-dependencies>
-          <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion (pedicciones_futuras_detalladas.csv+):qk]' included-values='in-range'>
-            <min>2027</min>
-            <max>2027</max>
-          </filter>
-          <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Reprobado_Prediccion:qk]' included-values='in-range'>
-            <min>1</min>
-            <max>1</max>
-          </filter>
-          <slices>
-            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Reprobado_Prediccion:qk]</column>
-            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion (pedicciones_futuras_detalladas.csv+):qk]</column>
-          </slices>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='cell'>
-            <format attr='width' value='119' />
-          </style-rule>
-          <style-rule element='header'>
-            <format attr='width' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]' value='244' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <encodings>
-              <text column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Gestion (pedicciones_futuras_detalladas.csv+):qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='true' />
-              </style-rule>
-              <style-rule element='pane'>
-                <format attr='minwidth' value='-1' />
-                <format attr='maxwidth' value='-1' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>([federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Codigo Rude (pedicciones_futuras_detalladas.csv+):nk] / ([federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk] / [federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Reprobado_Prediccion:ok]))</rows>
-        <cols />
-      </table>
-      <simple-id uuid='{61A10BE0-50A7-4D36-817F-A7C440D64B30}' />
-    </worksheet>
     <worksheet name='Porcentaje de M y F'>
       <layout-options>
         <title>
@@ -6986,6 +7059,85 @@
         <cols />
       </table>
       <simple-id uuid='{2783F47E-A9EE-4098-88F1-86541D0D3644}' />
+    </worksheet>
+    <worksheet name='Pred.ReprobadosPorAño'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Estudiantes con peligro de reprobar</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Proyecto Limberg Villca Coraite' name='federated.0wfqkft0jlfagj1awp0ft1sqdagy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
+            <column datatype='string' name='[A. Materno]' role='dimension' type='nominal' />
+            <column datatype='string' name='[A. Paterno]' role='dimension' type='nominal' />
+            <column caption='Nombre_Completo' datatype='string' name='[Calculation_28147564776730624]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Nombres] + &quot; &quot; + [A. Paterno] + &quot; &quot; + [A. Materno]' />
+            </column>
+            <column datatype='string' name='[Codigo Rude (pedicciones_futuras_detalladas.csv+)]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Gestion (pedicciones_futuras_detalladas.csv+)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Nombres]' role='dimension' type='nominal' />
+            <column caption='Reprobado Prediccion' datatype='integer' name='[Reprobado_Prediccion]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_28147564776730624]' derivation='None' name='[none:Calculation_28147564776730624:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Codigo Rude (pedicciones_futuras_detalladas.csv+)]' derivation='None' name='[none:Codigo Rude (pedicciones_futuras_detalladas.csv+):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Gestion (pedicciones_futuras_detalladas.csv+)]' derivation='None' name='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Gestion (pedicciones_futuras_detalladas.csv+)]' derivation='None' name='[none:Gestion (pedicciones_futuras_detalladas.csv+):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Reprobado_Prediccion]' derivation='None' name='[none:Reprobado_Prediccion:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Gestion (pedicciones_futuras_detalladas.csv+)]' derivation='Sum' name='[sum:Gestion (pedicciones_futuras_detalladas.csv+):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Gestion (pedicciones_futuras_detalladas.csv+))]'>
+            <groupfilter function='level-members' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' user:ui-action-filter='[Action8_F1536FFEEAB34BA5A00E31470171C427]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion (pedicciones_futuras_detalladas.csv+):qk]' included-values='all' />
+          <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Reprobado_Prediccion:qk]' included-values='in-range'>
+            <min>1</min>
+            <max>1</max>
+          </filter>
+          <slices>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion (pedicciones_futuras_detalladas.csv+):qk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Reprobado_Prediccion:qk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Gestion (pedicciones_futuras_detalladas.csv+))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='119' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]' value='244' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Gestion (pedicciones_futuras_detalladas.csv+):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Codigo Rude (pedicciones_futuras_detalladas.csv+):nk] / [federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{6D7EB5DC-505B-4B8D-B419-98D1D0E62ED3}' />
     </worksheet>
     <worksheet name='Prediccion'>
       <layout-options>
@@ -7101,25 +7253,15 @@
             <column caption='Nombre_Completo' datatype='string' name='[Calculation_28147564776730624]' role='dimension' type='nominal'>
               <calculation class='tableau' formula='[Nombres] + &quot; &quot; + [A. Paterno] + &quot; &quot; + [A. Materno]' />
             </column>
-            <column datatype='string' name='[Curso]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
-            <column datatype='string' name='[Nivel]' role='dimension' type='nominal' />
             <column datatype='string' name='[Nombres]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Promedio]' role='measure' type='quantitative' />
             <column-instance column='[Promedio]' derivation='Avg' name='[avg:Promedio:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Curso]' derivation='None' name='[none:Curso:nk]' pivot='key' type='nominal' />
             <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Nivel]' derivation='None' name='[none:Nivel:nk]' pivot='key' type='nominal' />
             <column-instance column='[Promedio]' derivation='None' name='[none:Promedio:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Nombre_Completo)]'>
             <groupfilter function='level-members' level='[Calculation_28147564776730624]' user:ui-action-filter='[Action4_39F88AE5B431418AAD3DC8050939377A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
-          </filter>
-          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]'>
-            <groupfilter function='member' level='[none:Curso:nk]' member='&quot;1ro A&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
-          </filter>
-          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]'>
-            <groupfilter function='level-members' level='[none:Nivel:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Promedio:qk]' included-values='in-range'>
             <min>1</min>
@@ -7127,8 +7269,6 @@
           <slices>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Promedio:qk]</column>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Nombre_Completo)]</column>
-            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]</column>
-            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -7149,7 +7289,6 @@
             </view>
             <mark class='Line' />
             <encodings>
-              <color column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' />
               <text column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' />
               <lod column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[:Measure Names]' />
             </encodings>
@@ -7276,6 +7415,173 @@
       </table>
       <simple-id uuid='{C7047502-0FD2-49E0-B2A7-63D59229DF30}' />
     </worksheet>
+    <worksheet name='Prom.Año.Curso.Gestion'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Promedio por año</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Proyecto Limberg Villca Coraite' name='federated.0wfqkft0jlfagj1awp0ft1sqdagy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
+            <column datatype='string' name='[A. Materno]' role='dimension' type='nominal' />
+            <column datatype='string' name='[A. Paterno]' role='dimension' type='nominal' />
+            <column caption='Nombre_Completo' datatype='string' name='[Calculation_28147564776730624]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Nombres] + &quot; &quot; + [A. Paterno] + &quot; &quot; + [A. Materno]' />
+            </column>
+            <column datatype='string' name='[Curso]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Nivel]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Nombres]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Promedio]' role='measure' type='quantitative' />
+            <column-instance column='[Promedio]' derivation='Avg' name='[avg:Promedio:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Curso]' derivation='None' name='[none:Curso:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Nivel]' derivation='None' name='[none:Nivel:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Promedio]' derivation='None' name='[none:Promedio:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Nombre_Completo)]'>
+            <groupfilter function='level-members' level='[Calculation_28147564776730624]' user:ui-action-filter='[Action4_39F88AE5B431418AAD3DC8050939377A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]'>
+            <groupfilter function='level-members' level='[none:Curso:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Promedio:qk]' included-values='in-range'>
+            <min>1</min>
+          </filter>
+          <slices>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Promedio:qk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Nombre_Completo)]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' field-type='quantitative' scope='rows' type='space' />
+            <format attr='title' class='0' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' scope='rows' value='Promedio' />
+            <format attr='title' class='0' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' scope='cols' value='Gestión' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' value='n#,##0.00;-#,##0.00' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' />
+              <text column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' />
+              <lod column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]</rows>
+        <cols>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]</cols>
+      </table>
+      <simple-id uuid='{48F66C08-62C4-4CDD-AAAC-2C6F5306014E}' />
+    </worksheet>
+    <worksheet name='Prom.Comparacion.Curso'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Promedio por año</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Proyecto Limberg Villca Coraite' name='federated.0wfqkft0jlfagj1awp0ft1sqdagy' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
+            <column datatype='string' name='[A. Materno]' role='dimension' type='nominal' />
+            <column datatype='string' name='[A. Paterno]' role='dimension' type='nominal' />
+            <column caption='Nombre_Completo' datatype='string' name='[Calculation_28147564776730624]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Nombres] + &quot; &quot; + [A. Paterno] + &quot; &quot; + [A. Materno]' />
+            </column>
+            <column datatype='string' name='[Curso]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Genero]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Nombres]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Promedio]' role='measure' type='quantitative' />
+            <column-instance column='[Promedio]' derivation='Avg' name='[avg:Promedio:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Curso]' derivation='None' name='[none:Curso:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Genero]' derivation='None' name='[none:Genero:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Promedio]' derivation='None' name='[none:Promedio:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Nombre_Completo)]'>
+            <groupfilter function='level-members' level='[Calculation_28147564776730624]' user:ui-action-filter='[Action4_39F88AE5B431418AAD3DC8050939377A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;1ro A&quot;' />
+              <groupfilter function='member' level='[none:Curso:nk]' member='&quot;1ro B&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]'>
+            <groupfilter function='level-members' level='[none:Genero:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Promedio:qk]' included-values='in-range'>
+            <min>1</min>
+          </filter>
+          <slices>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Promedio:qk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Nombre_Completo)]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' domain-expand='false' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' field-type='quantitative' scope='rows' type='space' />
+            <format attr='title' class='0' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' scope='rows' value='Promedio' />
+            <format attr='title' class='0' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' scope='cols' value='Gestión' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' value='n#,##0.00;-#,##0.00' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' />
+              <text column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' />
+              <lod column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]</rows>
+        <cols>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]</cols>
+      </table>
+      <simple-id uuid='{D707E02C-DCB6-4FAC-A2FC-50D10CF2892E}' />
+    </worksheet>
     <worksheet name='Promedio por genero'>
       <layout-options>
         <title>
@@ -7290,18 +7596,31 @@
             <datasource caption='Proyecto Limberg Villca Coraite' name='federated.0wfqkft0jlfagj1awp0ft1sqdagy' />
           </datasources>
           <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
+            <column datatype='string' name='[Curso]' role='dimension' type='nominal' />
             <column datatype='string' name='[Genero]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
             <column datatype='integer' name='[Promedio]' role='measure' type='quantitative' />
             <column-instance column='[Promedio]' derivation='Avg' name='[avg:Promedio:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Curso]' derivation='None' name='[none:Curso:nk]' pivot='key' type='nominal' />
             <column-instance column='[Genero]' derivation='None' name='[none:Genero:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Promedio]' derivation='None' name='[none:Promedio:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]'>
+            <groupfilter function='level-members' level='[none:Curso:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' included-values='in-range'>
+            <min>2015</min>
+            <max>2024</max>
+          </filter>
           <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Promedio:qk]' included-values='in-range'>
             <min>1</min>
             <max>98</max>
           </filter>
           <slices>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Promedio:qk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -7320,6 +7639,7 @@
             </view>
             <mark class='Automatic' />
             <encodings>
+              <color column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]' />
               <text column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' />
             </encodings>
             <style>
@@ -7384,11 +7704,11 @@
       </table>
       <simple-id uuid='{7F664F64-9168-4C0F-A172-C64D095C7449}' />
     </worksheet>
-    <worksheet name='ProyeccionCantidadDeEstudiantes'>
+    <worksheet lock-quick-filters='true' name='ProyeccionCantidadDeEstudiantes'>
       <layout-options>
         <title>
           <formatted-text>
-            <run fontalignment='1'>Proyección de cantidad de estudiantes</run>
+            <run fontalignment='1'>Proyección cantidad de estudiantes</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -7399,12 +7719,20 @@
           </datasources>
           <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
             <column datatype='integer' name='[Año]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Gestion (pedicciones_futuras_detalladas.csv+)]' role='measure' type='quantitative' />
             <column datatype='real' name='[Histórico]' role='measure' type='quantitative' />
             <column caption='Mejor Modelo' datatype='real' name='[MEJOR MODELO]' role='measure' type='quantitative' />
             <column-instance column='[Año]' derivation='None' name='[none:Año:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Gestion (pedicciones_futuras_detalladas.csv+)]' derivation='None' name='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' pivot='key' type='ordinal' />
             <column-instance column='[Histórico]' derivation='Sum' name='[sum:Histórico:qk]' pivot='key' type='quantitative' />
             <column-instance column='[MEJOR MODELO]' derivation='Sum' name='[sum:MEJOR MODELO:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Gestion (pedicciones_futuras_detalladas.csv+))]'>
+            <groupfilter function='level-members' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' user:ui-action-filter='[Action8_F1536FFEEAB34BA5A00E31470171C427]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Gestion (pedicciones_futuras_detalladas.csv+))]</column>
+          </slices>
           <aggregation value='true' />
         </view>
         <style>
@@ -7515,6 +7843,9 @@
                 <groupfilter function='member' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' member='2025' />
                 <groupfilter function='member' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' member='2026' />
                 <groupfilter function='member' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' member='2027' />
+                <groupfilter function='member' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' member='2028' />
+                <groupfilter function='member' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' member='2029' />
+                <groupfilter function='member' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' member='2030' />
               </groupfilter>
             </groupfilter>
           </filter>
@@ -7648,6 +7979,7 @@
           <datasource-dependencies datasource='federated.0wfqkft0jlfagj1awp0ft1sqdagy'>
             <column datatype='string' name='[Codigo Rude (Sheet11)]' role='dimension' type='nominal' />
             <column datatype='string' name='[Estado Matricula]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Genero]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Gestion]' role='measure' type='quantitative' />
             <column datatype='string' name='[Nivel]' role='dimension' type='nominal' />
             <column caption='Materias' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
@@ -7655,6 +7987,7 @@
             <column-instance column='[Codigo Rude (Sheet11)]' derivation='Count' name='[cnt:Codigo Rude (Sheet11):qk]' pivot='key' type='quantitative' />
             <column-instance column='[Codigo Rude (Sheet11)]' derivation='CountD' name='[ctd:Codigo Rude (Sheet11):qk]' pivot='key' type='quantitative' />
             <column-instance column='[Estado Matricula]' derivation='None' name='[none:Estado Matricula:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Genero]' derivation='None' name='[none:Genero:nk]' pivot='key' type='nominal' />
             <column-instance column='[Gestion]' derivation='None' name='[none:Gestion:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Nivel]' derivation='None' name='[none:Nivel:nk]' pivot='key' type='nominal' />
             <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
@@ -7662,6 +7995,12 @@
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]'>
             <groupfilter function='member' level='[none:Estado Matricula:nk]' member='&quot;REPROBADO&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Genero:nk]' member='&quot;F&quot;' />
+              <groupfilter function='member' level='[none:Genero:nk]' member='&quot;M&quot;' />
+            </groupfilter>
           </filter>
           <filter class='quantitative' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' included-values='in-range'>
             <min>2015</min>
@@ -7679,6 +8018,7 @@
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]</column>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Pivot Field Values:qk]</column>
             <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]</column>
+            <column>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -7901,9 +8241,9 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='49014' id='3' param='horz' type-v2='layout-flow' w='68499' x='511' y='986'>
-            <zone h='49014' id='5' param='vert' type-v2='layout-flow' w='68499' x='511' y='986'>
-              <zone h='8877' id='8' name='ProyeccionCantidadDeEstudiantes' pane-specification-id='3' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[:Measure Names]' type-v2='color' w='68499' x='511' y='986'>
+          <zone h='49014' id='3' param='horz' type-v2='layout-flow' w='49695' x='531' y='986'>
+            <zone h='49014' id='5' param='vert' type-v2='layout-flow' w='49695' x='531' y='986'>
+              <zone h='8877' id='8' name='ProyeccionCantidadDeEstudiantes' pane-specification-id='3' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[:Measure Names]' type-v2='color' w='49695' x='531' y='986'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -7911,7 +8251,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='40137' id='9' name='Prediccion' w='68499' x='511' y='9863'>
+              <zone h='40137' id='9' name='Prediccion' w='49695' x='531' y='9863'>
                 <layout-cache minheight='181' minwidth='102' type-h='scalable' type-w='scalable' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -7922,9 +8262,9 @@
               </zone>
             </zone>
           </zone>
-          <zone h='49014' id='6' param='vert' type-v2='layout-flow' w='68499' x='511' y='50000'>
-            <zone h='49014' id='7' name='ProyeccionCantidadDeEstudiantes' w='68499' x='511' y='50000'>
-              <layout-cache minheight='176' type-h='scalable' type-w='fixed' />
+          <zone h='49014' id='6' param='vert' type-v2='layout-flow' w='49695' x='531' y='50000'>
+            <zone h='49014' id='7' name='ProyeccionCantidadDeEstudiantes' w='49695' x='531' y='50000'>
+              <layout-cache minheight='211' type-h='scalable' type-w='fixed' />
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -7933,7 +8273,7 @@
               </zone-style>
             </zone>
           </zone>
-          <zone h='98028' id='10' name='PerfilesDeIntervension (2)' w='30479' x='69010' y='986'>
+          <zone h='98028' id='35' name='Pred.ReprobadosPorAño' w='49243' x='50226' y='986'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -7953,9 +8293,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='950' minheight='950' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='20' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='19' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
-                <zone fixed-size='280' h='98028' id='10' is-fixed='true' name='PerfilesDeIntervension (2)' w='30479' x='69010' y='986'>
+            <zone h='100000' id='37' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98028' id='36' param='vert' type-v2='layout-flow' w='98938' x='531' y='986'>
+                <zone fixed-size='280' h='98028' id='35' is-fixed='true' name='Pred.ReprobadosPorAño' w='49243' x='50226' y='986'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -7964,7 +8304,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='40137' id='9' is-fixed='true' name='Prediccion' w='68499' x='511' y='9863'>
+                <zone fixed-size='280' h='40137' id='9' is-fixed='true' name='Prediccion' w='49695' x='531' y='9863'>
                   <layout-cache minheight='181' minwidth='102' type-h='scalable' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -7974,8 +8314,8 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49014' id='7' is-fixed='true' name='ProyeccionCantidadDeEstudiantes' w='68499' x='511' y='50000'>
-                  <layout-cache minheight='176' type-h='scalable' type-w='fixed' />
+                <zone fixed-size='280' h='49014' id='7' is-fixed='true' name='ProyeccionCantidadDeEstudiantes' w='49695' x='531' y='50000'>
+                  <layout-cache minheight='211' type-h='scalable' type-w='fixed' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -7984,7 +8324,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='8877' id='8' name='ProyeccionCantidadDeEstudiantes' pane-specification-id='3' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[:Measure Names]' type-v2='color' w='68499' x='511' y='986'>
+                <zone h='8877' id='8' name='ProyeccionCantidadDeEstudiantes' pane-specification-id='3' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[:Measure Names]' type-v2='color' w='49695' x='531' y='986'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -8011,10 +8351,10 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98028' id='17' param='horz' type-v2='layout-flow' w='98978' x='511' y='986'>
-            <zone h='98028' id='12' type-v2='layout-basic' w='98978' x='511' y='986'>
-              <zone h='49014' id='3' param='horz' type-v2='layout-flow' w='57131' x='511' y='50000'>
-                <zone h='49014' id='15' name='Reprobados por curso' show-title='false' w='57131' x='511' y='50000'>
+          <zone h='98028' id='17' param='horz' type-v2='layout-flow' w='98938' x='531' y='986'>
+            <zone h='98028' id='12' type-v2='layout-basic' w='98938' x='531' y='986'>
+              <zone h='49014' id='3' param='horz' type-v2='layout-flow' w='57107' x='531' y='50000'>
+                <zone h='49014' id='15' name='Reprobados por curso' show-title='false' w='57107' x='531' y='50000'>
                   <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8024,8 +8364,8 @@
                   </zone-style>
                 </zone>
               </zone>
-              <zone h='49014' id='6' param='vert' type-v2='layout-flow' w='41847' x='57642' y='50000'>
-                <zone h='49014' id='19' name='%ReprobadosPorNivel' w='41847' x='57642' y='50000'>
+              <zone h='49014' id='6' param='vert' type-v2='layout-flow' w='41831' x='57638' y='50000'>
+                <zone h='49014' id='19' name='%ReprobadosPorNivel' w='41831' x='57638' y='50000'>
                   <layout-cache cell-count-h='3' non-cell-size-h='50' type-h='cell' type-w='fixed' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8035,8 +8375,8 @@
                   </zone-style>
                 </zone>
               </zone>
-              <zone h='44451' id='8' param='vert' type-v2='layout-flow' w='98978' x='511' y='5549'>
-                <zone h='44451' id='18' name='Reprobados por año-2' show-title='false' w='98978' x='511' y='5549'>
+              <zone h='44451' id='8' param='vert' type-v2='layout-flow' w='98938' x='531' y='5549'>
+                <zone h='44451' id='18' name='Reprobados por año-2' show-title='false' w='98938' x='531' y='5549'>
                   <layout-cache minheight='130' type-h='scalable' type-w='fixed' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8046,7 +8386,7 @@
                   </zone-style>
                 </zone>
               </zone>
-              <zone forceUpdate='true' h='4563' id='9' type-v2='text' w='98978' x='511' y='986'>
+              <zone forceUpdate='true' h='4563' id='9' type-v2='text' w='98938' x='531' y='986'>
                 <formatted-text>
                   <run fontalignment='1' fontsize='14'>Reprobados por año</run>
                 </formatted-text>
@@ -8071,9 +8411,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='950' minheight='950' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='29' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='28' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
-                <zone forceUpdate='true' h='4563' id='9' type-v2='text' w='98978' x='511' y='986'>
+            <zone h='100000' id='45' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98028' id='44' param='vert' type-v2='layout-flow' w='98938' x='531' y='986'>
+                <zone forceUpdate='true' h='4563' id='9' type-v2='text' w='98938' x='531' y='986'>
                   <formatted-text>
                     <run fontalignment='1' fontsize='14'>Reprobados por año</run>
                   </formatted-text>
@@ -8085,7 +8425,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='44451' id='18' is-fixed='true' name='Reprobados por año-2' show-title='false' w='98978' x='511' y='5549'>
+                <zone fixed-size='280' h='44451' id='18' is-fixed='true' name='Reprobados por año-2' show-title='false' w='98938' x='531' y='5549'>
                   <layout-cache minheight='130' type-h='scalable' type-w='fixed' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8095,7 +8435,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49014' id='15' is-fixed='true' name='Reprobados por curso' show-title='false' w='57131' x='511' y='50000'>
+                <zone fixed-size='280' h='49014' id='15' is-fixed='true' name='Reprobados por curso' show-title='false' w='57107' x='531' y='50000'>
                   <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8105,7 +8445,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49014' id='19' is-fixed='true' name='%ReprobadosPorNivel' w='41847' x='57642' y='50000'>
+                <zone fixed-size='280' h='49014' id='19' is-fixed='true' name='%ReprobadosPorNivel' w='41831' x='57638' y='50000'>
                   <layout-cache cell-count-h='3' non-cell-size-h='50' type-h='cell' type-w='fixed' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8133,8 +8473,8 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98028' id='3' param='horz' type-v2='layout-flow' w='98978' x='511' y='986'>
-            <zone h='98028' id='5' is-scaled='1' param='Image/risk_distribution_level.png' type-v2='bitmap' w='98978' x='511' y='986'>
+          <zone h='98028' id='3' param='horz' type-v2='layout-flow' w='99034' x='483' y='986'>
+            <zone h='98028' id='5' is-scaled='1' param='Image/risk_distribution_level.png' type-v2='bitmap' w='99034' x='483' y='986'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -8155,9 +8495,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='15' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='14' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
-                <zone fixed-size='280' h='98028' id='5' is-fixed='true' is-scaled='1' param='Image/risk_distribution_level.png' type-v2='bitmap' w='98978' x='511' y='986'>
+            <zone h='100000' id='31' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98028' id='30' param='vert' type-v2='layout-flow' w='99034' x='483' y='986'>
+                <zone fixed-size='280' h='98028' id='5' is-fixed='true' is-scaled='1' param='Image/risk_distribution_level.png' type-v2='bitmap' w='99034' x='483' y='986'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -8184,11 +8524,11 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98028' id='1' param='vert' removable='false' type-v2='layout-flow' w='98956' x='522' y='986'>
-            <zone h='5179' id='3' type-v2='title' w='98956' x='522' y='986' />
-            <zone fixed-size='205' h='25277' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98956' x='522' y='6165' />
-            <zone h='67572' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98956' x='522' y='31442'>
-              <flipboard active-id='4' nav-type='caption' show-nav-arrows='true'>
+          <zone h='98388' id='1' param='vert' removable='false' type-v2='layout-flow' w='99166' x='417' y='806'>
+            <zone h='4230' id='3' type-v2='title' w='99166' x='417' y='806' />
+            <zone fixed-size='205' h='20645' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='99166' x='417' y='5036' />
+            <zone h='73513' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='99166' x='417' y='25681'>
+              <flipboard active-id='5' nav-type='caption' show-nav-arrows='true'>
                 <story-points>
                   <story-point caption='Trama&#10;La unidad educativa San José Obrero tuvo una mayor cantidad de estudiantes inscritos el año 2024 y los promedios oscilan entre los 60 y 80 puntos' captured-sheet='Trama' id='1' />
                   <story-point caption='Tensión&#10;Vemos que el promedio general de la U.E. tuvo una baja con el pasar del tiempo,  la mejor estudiante de la Unidad Educativa fue Ana Mirtha con un promedio de 96. ' captured-sheet='Tensión' id='2'>
@@ -8205,7 +8545,45 @@
                     </capturedDeltas>
                   </story-point>
                   <story-point caption='Climax&#10;Se ha revisado cada gestión y se concluye que el año 2024 ha tenido más estudiantes reprobados' captured-sheet='Climax1' id='3' />
-                  <story-point caption='Climax&#10;En los años venideros aumentara la cantidad de estudiantes y reducir la cantidad de reprobados, se tiene previsto que algunos estudiantes reprueben el año escolar' captured-sheet='Climax 2' id='6' />
+                  <story-point caption='Climax&#10;En los años venideros aumentara la cantidad de estudiantes y reducir la cantidad de reprobados, se tiene previsto que algunos estudiantes reprueben el año escolar' captured-sheet='Climax 2' id='6'>
+                    <capturedDeltas>
+                      <worksheet name='Pred.ReprobadosPorAño'>
+                        <filter class='categorical' column='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[Action (Gestion (pedicciones_futuras_detalladas.csv+))]'>
+                          <groupfilter function='member' level='[none:Gestion (pedicciones_futuras_detalladas.csv+):ok]' member='2030' user:ui-action-filter='[Action8_F1536FFEEAB34BA5A00E31470171C427]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+                        </filter>
+                      </worksheet>
+                      <worksheet name='Prediccion'>
+                        <selection-collection>
+                          <tuple-selection>
+                            <tuple-reference>
+                              <tuple-descriptor>
+                                <pane-descriptor>
+                                  <x-fields>
+                                    <field>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion (pedicciones_futuras_detalladas.csv+):qk]</field>
+                                  </x-fields>
+                                  <y-fields>
+                                    <field>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Reprobado_Prediccion:qk]</field>
+                                  </y-fields>
+                                </pane-descriptor>
+                                <columns>
+                                  <field>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion (pedicciones_futuras_detalladas.csv+):qk]</field>
+                                  <field>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Reprobado:qk]</field>
+                                  <field>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Reprobado_Prediccion:qk]</field>
+                                  <field>[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[:Measure Names]</field>
+                                </columns>
+                              </tuple-descriptor>
+                              <tuple>
+                                <value>2030</value>
+                                <value>%null%</value>
+                                <value>10</value>
+                                <value>&quot;[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[sum:Reprobado_Prediccion:qk]&quot;</value>
+                              </tuple>
+                            </tuple-reference>
+                          </tuple-selection>
+                        </selection-collection>
+                      </worksheet>
+                    </capturedDeltas>
+                  </story-point>
                   <story-point caption='Resolución&#10;Se concluye que los estudiantes tienen mayor dificultad en la materia de Biogeografía/C. Naturales y matemáticas' captured-sheet='Resolucion' id='4' />
                   <story-point caption='Desenlace&#10;Es recomendable que los profesores del nivel primario puedan fortalecer los conocimientos en los primeros años de formación primaria' captured-sheet='Des' id='5' />
                 </story-points>
@@ -8242,9 +8620,9 @@
       </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98028' id='7' param='horz' type-v2='layout-flow' w='98978' x='511' y='986'>
-            <zone h='98028' id='3' param='horz' type-v2='layout-flow' w='78020' x='511' y='986'>
-              <zone h='98028' id='5' name='TasaReprobados' w='78020' x='511' y='986'>
+          <zone h='98028' id='7' param='horz' type-v2='layout-flow' w='99034' x='483' y='986'>
+            <zone h='98028' id='3' param='horz' type-v2='layout-flow' w='79239' x='483' y='986'>
+              <zone h='98028' id='5' name='TasaReprobados' w='79239' x='483' y='986'>
                 <layout-cache cell-count-w='13' minheight='190' type-h='scalable' type-w='cell' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -8254,8 +8632,8 @@
                 </zone-style>
               </zone>
             </zone>
-            <zone fixed-size='328' h='98028' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='20958' x='78531' y='986'>
-              <zone h='12947' id='8' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type-v2='filter' w='20958' x='78531' y='986'>
+            <zone fixed-size='328' h='98028' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='19795' x='79722' y='986'>
+              <zone h='12947' id='8' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type-v2='filter' w='19795' x='79722' y='986'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -8263,7 +8641,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone fixed-size='149' h='19358' id='9' is-fixed='true' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type-v2='filter' w='20958' x='78531' y='13933'>
+              <zone fixed-size='149' h='19358' id='9' is-fixed='true' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type-v2='filter' w='19795' x='79722' y='13933'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -8271,7 +8649,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='58942' id='10' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]' type-v2='filter' w='20958' x='78531' y='33291'>
+              <zone h='58942' id='10' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]' type-v2='filter' w='19795' x='79722' y='33291'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -8279,7 +8657,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='6781' id='11' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='20958' x='78531' y='92233'>
+              <zone h='6781' id='11' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='19795' x='79722' y='92233'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -8301,9 +8679,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='21' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='20' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
-                <zone h='12947' id='8' mode='checkdropdown' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type-v2='filter' w='20958' x='78531' y='986'>
+            <zone h='100000' id='37' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98028' id='36' param='vert' type-v2='layout-flow' w='99034' x='483' y='986'>
+                <zone h='12947' id='8' mode='checkdropdown' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type-v2='filter' w='19795' x='79722' y='986'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -8312,7 +8690,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='149' h='19358' id='9' mode='checkdropdown' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type-v2='filter' w='20958' x='78531' y='13933'>
+                <zone fixed-size='149' h='19358' id='9' mode='checkdropdown' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type-v2='filter' w='19795' x='79722' y='13933'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -8321,7 +8699,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='58942' id='10' mode='checkdropdown' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]' type-v2='filter' w='20958' x='78531' y='33291'>
+                <zone h='58942' id='10' mode='checkdropdown' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]' type-v2='filter' w='19795' x='79722' y='33291'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -8330,7 +8708,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='6781' id='11' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='20958' x='78531' y='92233'>
+                <zone h='6781' id='11' name='TasaReprobados' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='19795' x='79722' y='92233'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -8339,7 +8717,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='98028' id='5' is-fixed='true' name='TasaReprobados' w='78020' x='511' y='986'>
+                <zone fixed-size='280' h='98028' id='5' is-fixed='true' name='TasaReprobados' w='79239' x='483' y='986'>
                   <layout-cache cell-count-w='13' minheight='190' type-h='scalable' type-w='cell' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8376,10 +8754,10 @@
       </datasource-dependencies>
       <zones>
         <zone h='100000' id='6' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='86314' id='14' param='horz' type-v2='layout-flow' w='98978' x='511' y='12700'>
-            <zone h='86314' id='12' type-v2='layout-basic' w='88754' x='511' y='12700'>
-              <zone h='43157' id='8' param='vert' type-v2='layout-flow' w='88754' x='511' y='55857'>
-                <zone h='43157' id='10' name='Prom.Año' show-title='false' w='88754' x='511' y='55857'>
+          <zone h='86314' id='14' param='horz' type-v2='layout-flow' w='98938' x='531' y='12700'>
+            <zone h='86314' id='12' type-v2='layout-basic' w='88321' x='531' y='12700'>
+              <zone h='43157' id='8' param='vert' type-v2='layout-flow' w='88321' x='531' y='55857'>
+                <zone h='43157' id='10' name='Prom.Año' show-title='false' w='88321' x='531' y='55857'>
                   <layout-cache minheight='163' type-h='scalable' type-w='fixed' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8389,8 +8767,8 @@
                   </zone-style>
                 </zone>
               </zone>
-              <zone h='43157' id='9' param='vert' type-v2='layout-flow' w='88754' x='511' y='12700'>
-                <zone h='43157' id='11' name='Mejores estudiantes' show-title='false' w='88754' x='511' y='12700'>
+              <zone h='43157' id='9' param='vert' type-v2='layout-flow' w='88321' x='531' y='12700'>
+                <zone h='43157' id='11' name='Mejores estudiantes' show-title='false' w='88321' x='531' y='12700'>
                   <layout-cache minheight='140' type-h='scalable' type-w='fixed' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8401,8 +8779,8 @@
                 </zone>
               </zone>
             </zone>
-            <zone fixed-size='160' h='86314' id='13' is-fixed='true' param='vert' type-v2='layout-flow' w='10224' x='89265' y='12700'>
-              <zone fixed-size='397' h='49938' id='16' is-fixed='true' name='Mejores estudiantes' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type-v2='filter' w='10224' x='89265' y='12700'>
+            <zone fixed-size='160' h='86314' id='13' is-fixed='true' param='vert' type-v2='layout-flow' w='10617' x='88852' y='12700'>
+              <zone fixed-size='397' h='49938' id='16' is-fixed='true' name='Mejores estudiantes' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type-v2='filter' w='10617' x='88852' y='12700'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -8410,7 +8788,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone fixed-size='97' h='12947' id='17' is-fixed='true' name='Mejores estudiantes' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type-v2='filter' w='10224' x='89265' y='62638'>
+              <zone fixed-size='97' h='12947' id='17' is-fixed='true' name='Mejores estudiantes' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type-v2='filter' w='10617' x='88852' y='62638'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -8420,7 +8798,7 @@
               </zone>
             </zone>
           </zone>
-          <zone h='11714' id='18' type-v2='text' w='98978' x='511' y='986'>
+          <zone h='11714' id='18' type-v2='text' w='98938' x='531' y='986'>
             <formatted-text>
               <run fontalignment='1' fontsize='14'>Promedios por año y mejores estudiantes</run>
             </formatted-text>
@@ -8443,9 +8821,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='800' minheight='800' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='32' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='31' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
-                <zone h='11714' id='18' type-v2='text' w='98978' x='511' y='986'>
+            <zone h='100000' id='48' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98028' id='47' param='vert' type-v2='layout-flow' w='98938' x='531' y='986'>
+                <zone h='11714' id='18' type-v2='text' w='98938' x='531' y='986'>
                   <formatted-text>
                     <run fontalignment='1' fontsize='14'>Promedios por año y mejores estudiantes</run>
                   </formatted-text>
@@ -8457,7 +8835,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='397' h='49938' id='16' mode='checkdropdown' name='Mejores estudiantes' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type-v2='filter' w='10224' x='89265' y='12700'>
+                <zone fixed-size='397' h='49938' id='16' mode='checkdropdown' name='Mejores estudiantes' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type-v2='filter' w='10617' x='88852' y='12700'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -8466,7 +8844,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='97' h='12947' id='17' mode='checkdropdown' name='Mejores estudiantes' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type-v2='filter' w='10224' x='89265' y='62638'>
+                <zone fixed-size='97' h='12947' id='17' mode='checkdropdown' name='Mejores estudiantes' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type-v2='filter' w='10617' x='88852' y='62638'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -8475,7 +8853,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='43157' id='11' is-fixed='true' name='Mejores estudiantes' show-title='false' w='88754' x='511' y='12700'>
+                <zone fixed-size='280' h='43157' id='11' is-fixed='true' name='Mejores estudiantes' show-title='false' w='88321' x='531' y='12700'>
                   <layout-cache minheight='140' type-h='scalable' type-w='fixed' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8485,7 +8863,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='43157' id='10' is-fixed='true' name='Prom.Año' show-title='false' w='88754' x='511' y='55857'>
+                <zone fixed-size='280' h='43157' id='10' is-fixed='true' name='Prom.Año' show-title='false' w='88321' x='531' y='55857'>
                   <layout-cache minheight='163' type-h='scalable' type-w='fixed' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -8513,9 +8891,9 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='44759' id='1' param='horz' type-v2='layout-flow' w='99034' x='483' y='7522'>
-            <zone h='44759' id='3' param='vert' type-v2='layout-flow' w='99034' x='483' y='7522'>
-              <zone h='44759' id='6' name='Cantidad de estudiantes por año' show-title='false' w='99034' x='483' y='7522'>
+          <zone h='44759' id='1' param='horz' type-v2='layout-flow' w='98936' x='532' y='7522'>
+            <zone h='44759' id='3' param='vert' type-v2='layout-flow' w='98936' x='532' y='7522'>
+              <zone h='44759' id='6' name='Cantidad de estudiantes por año' show-title='false' w='98936' x='532' y='7522'>
                 <layout-cache minheight='163' minwidth='100' type-h='scalable' type-w='scalable' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -8526,8 +8904,8 @@
               </zone>
             </zone>
           </zone>
-          <zone h='46733' id='4' param='vert' type-v2='layout-flow' w='99034' x='483' y='52281'>
-            <zone h='46733' id='8' name='Porcentaje de M y F' show-title='false' w='99034' x='483' y='52281'>
+          <zone h='46733' id='4' param='vert' type-v2='layout-flow' w='98936' x='532' y='52281'>
+            <zone h='46733' id='8' name='Porcentaje de M y F' show-title='false' w='98936' x='532' y='52281'>
               <layout-cache cell-count-h='1' type-h='cell' type-w='fixed' />
               <zone-style>
                 <format attr='border-color' value='#000000' />
@@ -8537,7 +8915,7 @@
               </zone-style>
             </zone>
           </zone>
-          <zone forceUpdate='true' h='6536' id='9' type-v2='text' w='99034' x='483' y='986'>
+          <zone forceUpdate='true' h='6536' id='9' type-v2='text' w='98936' x='532' y='986'>
             <formatted-text>
               <run fontalignment='1' fontsize='14'>Cantidad de estudiantes y porcentaje de género por año</run>
             </formatted-text>
@@ -8629,6 +9007,13 @@
             <card type='title' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type='filter' />
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]' type='color' />
+          </strip>
+        </edge>
       </cards>
       <viewpoint>
         <zoom type='entire-view' />
@@ -8657,10 +9042,7 @@
         </edge>
         <edge name='right'>
           <strip size='200'>
-            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type='filter' />
-            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Promedio:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
-            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type='color' />
           </strip>
         </edge>
       </cards>
@@ -8668,6 +9050,71 @@
         <zoom type='entire-view' />
       </viewpoint>
       <simple-id uuid='{93D17EA8-9CD4-4A22-9507-B1A8D63E9FFE}' />
+    </window>
+    <window class='worksheet' name='Prom.Año.Curso.Gestion'>
+      <cards>
+        <edge name='left'>
+          <strip size='188'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='44'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='200'>
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C83BC44C-9796-45C2-9347-9D38E96E6B71}' />
+    </window>
+    <window class='worksheet' name='Prom.Comparacion.Curso'>
+      <cards>
+        <edge name='left'>
+          <strip size='188'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='44'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='200'>
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]' type='filter' />
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{B0AE312C-DD2C-4936-917F-DF192D84B16D}' />
     </window>
     <window class='worksheet' name='Prom.Año (2)'>
       <cards>
@@ -8735,6 +9182,38 @@
       </viewpoint>
       <simple-id uuid='{8047CFB8-7D8A-44A3-AC57-6E3556DBA0AB}' />
     </window>
+    <window class='worksheet' name='Evol. Est-rep'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='44'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='360'>
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_28147564776730624:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[cnt:Pivot Field Values:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{68435EA0-90F0-4A10-BF7B-4156537A2162}' />
+    </window>
     <window class='worksheet' name='Est.Por Curso'>
       <cards>
         <edge name='left'>
@@ -8757,10 +9236,11 @@
         </edge>
         <edge name='right'>
           <strip size='200'>
-            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' show-domain='false' show-null-ctrls='false' size='8' type='filter' />
-            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' size='32' type='filter' />
-            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' size='15' type='filter' />
-            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' size='3' type='color' />
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]' type='filter' />
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[avg:Promedio:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type='filter' />
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type='color' />
           </strip>
         </edge>
       </cards>
@@ -8785,15 +9265,16 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='21'>
+          <strip size='20'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
           <strip size='128'>
-            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type='filter' />
-            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]' type='filter' />
-            <card pane-specification-id='3' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type='color' />
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' size='140' type='filter' />
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' size='38' type='filter' />
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]' size='85' type='filter' />
+            <card pane-specification-id='3' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' size='21' type='color' />
           </strip>
         </edge>
       </cards>
@@ -8824,6 +9305,7 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]' type='filter' />
           </strip>
         </edge>
@@ -8833,7 +9315,7 @@
       </viewpoint>
       <simple-id uuid='{1040EC91-8ECF-4093-9B79-78A59A1059CF}' />
     </window>
-    <window class='worksheet' name='Cantidad de estudiantes por año (2)'>
+    <window class='worksheet' name='Cantidad-est-reprobados'>
       <cards>
         <edge name='left'>
           <strip size='100'>
@@ -8875,12 +9357,13 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='21'>
+          <strip size='20'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
           <strip size='128'>
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Pivot Field Values:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
@@ -8914,7 +9397,15 @@
             <card type='title' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]' type='filter' />
+          </strip>
+        </edge>
       </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
       <simple-id uuid='{B5BE440E-2C1B-4BA8-A485-BA21F04DB719}' />
     </window>
     <window class='worksheet' name='Dificultad de materias'>
@@ -8933,12 +9424,13 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='25'>
+          <strip size='24'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='105'>
+          <strip size='104'>
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Estado Matricula:nk]' type='filter' />
@@ -8954,7 +9446,7 @@
     <window class='worksheet' name='Porcentaje de M y F'>
       <cards>
         <edge name='left'>
-          <strip size='101'>
+          <strip size='100'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -8967,12 +9459,12 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='21'>
+          <strip size='20'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='101'>
+          <strip size='100'>
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type='filter' values='relevant' />
             <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Genero:nk]' type='color' />
           </strip>
@@ -9017,7 +9509,7 @@
     <window class='worksheet' name='Promedio por materia'>
       <cards>
         <edge name='left'>
-          <strip size='101'>
+          <strip size='100'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -9030,15 +9522,15 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='21'>
+          <strip size='20'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='101'>
-            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Pivot Field Names:nk]' size='64' type='filter' />
-            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Pivot Field Names:nk]' size='5' type='color' />
-            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Pivot Field Names:nk]' size='5' type='shape' />
+          <strip size='100'>
+            <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Pivot Field Names:nk]' size='32' type='filter' />
+            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Pivot Field Names:nk]' size='2' type='color' />
+            <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Pivot Field Names:nk]' size='2' type='shape' />
           </strip>
         </edge>
       </cards>
@@ -9050,7 +9542,7 @@
     <window class='worksheet' name='%ReprobadoPorAño'>
       <cards>
         <edge name='left'>
-          <strip size='130'>
+          <strip size='128'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -9063,7 +9555,7 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='21'>
+          <strip size='20'>
             <card type='title' />
           </strip>
         </edge>
@@ -9089,12 +9581,12 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='21'>
+          <strip size='20'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='101'>
+          <strip size='100'>
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
             <card pane-specification-id='0' param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Calculation_855120981409619984:nk]' type='color' />
           </strip>
@@ -9108,7 +9600,7 @@
     <window class='worksheet' name='Intervension'>
       <cards>
         <edge name='left'>
-          <strip size='101'>
+          <strip size='100'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -9121,12 +9613,12 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='21'>
+          <strip size='20'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='101'>
+          <strip size='100'>
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel_Riesgo:nk]' type='filter' />
           </strip>
         </edge>
@@ -9149,7 +9641,7 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='21'>
+          <strip size='20'>
             <card type='title' />
           </strip>
         </edge>
@@ -9175,14 +9667,14 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='21'>
+          <strip size='20'>
             <card type='title' />
           </strip>
         </edge>
       </cards>
       <simple-id uuid='{5796DFF9-A844-429C-BC4C-FAC8B7A9C3AA}' />
     </window>
-    <window class='worksheet' name='PerfilesDeIntervension (3)'>
+    <window class='worksheet' name='Pred.ReprobadosPorAño'>
       <cards>
         <edge name='left'>
           <strip size='128'>
@@ -9208,12 +9700,12 @@
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{0F8F6D1F-A6C3-48CC-B054-1EE2DE17045C}' />
+      <simple-id uuid='{82BA7BD0-C3C9-48BF-899F-C22F76D9DC19}' />
     </window>
     <window class='worksheet' name='Mejores estudiantes'>
       <cards>
         <edge name='left'>
-          <strip size='101'>
+          <strip size='100'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -9226,12 +9718,12 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='18'>
+          <strip size='16'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='101'>
+          <strip size='100'>
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Gestion:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Curso:nk]' type='filter' />
             <card param='[federated.0wfqkft0jlfagj1awp0ft1sqdagy].[none:Nivel:nk]' type='filter' />
@@ -9246,7 +9738,7 @@
     <window class='worksheet' name='Reprobados por curso'>
       <cards>
         <edge name='left'>
-          <strip size='165'>
+          <strip size='164'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -9259,7 +9751,7 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='18'>
+          <strip size='16'>
             <card type='title' />
           </strip>
         </edge>
@@ -9279,7 +9771,7 @@
     <window class='worksheet' name='Reprobados por año-2'>
       <cards>
         <edge name='left'>
-          <strip size='165'>
+          <strip size='164'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -9292,7 +9784,7 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='18'>
+          <strip size='16'>
             <card type='title' />
           </strip>
         </edge>
@@ -9305,7 +9797,7 @@
     <window class='worksheet' name='ProyeccionCantidadDeEstudiantes'>
       <cards>
         <edge name='left'>
-          <strip size='101'>
+          <strip size='100'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -9318,7 +9810,7 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='18'>
+          <strip size='16'>
             <card type='title' />
           </strip>
         </edge>
@@ -9349,7 +9841,7 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='18'>
+          <strip size='16'>
             <card type='title' />
           </strip>
         </edge>
@@ -9370,7 +9862,7 @@
     </window>
     <window class='dashboard' maximized='true' name='Narrativa'>
       <viewpoints />
-      <active id='-1' />
+      <active id='5' />
       <simple-id uuid='{712523BF-ACAA-4ECA-8090-D5BD3AA0C26C}' />
     </window>
     <window class='dashboard' name='Trama'>
@@ -9414,9 +9906,7 @@
     </window>
     <window class='dashboard' name='Climax 2'>
       <viewpoints>
-        <viewpoint name='PerfilesDeIntervension (2)'>
-          <zoom type='entire-view' />
-        </viewpoint>
+        <viewpoint name='Pred.ReprobadosPorAño' />
         <viewpoint name='Prediccion'>
           <zoom type='entire-view' />
         </viewpoint>
@@ -9424,7 +9914,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='-1' />
+      <active id='7' />
       <simple-id uuid='{F7E14C0A-D937-469D-B713-896B0C331726}' />
     </window>
     <window class='dashboard' name='Resolucion'>

@@ -10796,3 +10796,951 @@ Muy Alto      1
 2025-06-03 13:59:32,074 - INFO - Perfiles de intervención completos guardados en 'perfiles_intervencion.csv'
 2025-06-03 13:59:32,091 - INFO - DataFrame con detalles y predicciones del próximo año guardado en 'predicciones_completas_proximo_año.csv'
 2025-06-03 13:59:32,092 - INFO - --- FIN DEL PROCESO ---
+2025-06-15 23:00:49,044 - INFO - --- INICIO DEL PROCESO DE ANÁLISIS DE RIESGO ESTUDIANTIL ---
+2025-06-15 23:00:49,047 - INFO - Usando archivo de datos: ./Salidas del programa/tabla_minable.csv
+2025-06-15 23:00:49,075 - INFO - Datos cargados exitosamente: 2641 filas, 7 columnas
+2025-06-15 23:00:49,076 - INFO - Iniciando preprocesamiento de datos...
+2025-06-15 23:00:49,091 - INFO - Año máximo en los datos: 2024
+2025-06-15 23:00:49,096 - INFO - Datos para modelado: 2361 filas (hasta 2023)
+2025-06-15 23:00:49,096 - INFO - Datos para predicción futura: 280 filas (2024)
+2025-06-15 23:00:49,101 - WARNING - Se eliminaron 507 filas con 'Reprobado_siguiente' nulo (del último año por estudiante).
+2025-06-15 23:00:49,103 - INFO - Preprocesamiento de datos completado.
+2025-06-15 23:00:49,105 - INFO - Iniciando creación de características...
+2025-06-15 23:00:49,606 - INFO - Creación de características completada.
+2025-06-15 23:00:49,607 - INFO - Año de validación (prueba): 2023
+2025-06-15 23:00:49,609 - INFO - Realizando división temporal: entrenamiento < 2023, prueba = 2023
+2025-06-15 23:00:49,613 - INFO - Tamaño entrenamiento: 1646 filas
+2025-06-15 23:00:49,615 - INFO - Tamaño prueba: 208 filas
+2025-06-15 23:00:49,616 - INFO - Preparando datos para modelado (codificación y escalado)...
+2025-06-15 23:00:49,618 - INFO - Aplicando One-Hot Encoding a: ['Genero', 'Nivel', 'Curso']
+2025-06-15 23:00:49,635 - INFO - Columnas a eliminar antes de escalar: ['Reprobado_siguiente', 'Gestion', 'Codigo Rude']
+2025-06-15 23:00:49,639 - INFO - Número de características para el modelo: 27
+2025-06-15 23:00:49,640 - INFO - Aplicando StandardScaler a las características.
+2025-06-15 23:00:49,651 - INFO - Preparación de datos para modelado completada.
+2025-06-15 23:00:49,652 - INFO - Distribución de clases en entrenamiento:
+2025-06-15 23:00:49,653 - INFO -   Clase 0 (No reprobados): 1555 (94.47%)
+2025-06-15 23:00:49,657 - INFO -   Clase 1 (Reprobados): 91 (5.53%)
+2025-06-15 23:00:49,659 - INFO - Iniciando entrenamiento y evaluación de modelos...
+2025-06-15 23:00:49,665 - INFO - Pesos de clase calculados (balanced): {0: 0.5292604501607717, 1: 9.043956043956044}
+2025-06-15 23:00:49,666 - INFO - scale_pos_weight para XGBoost: 17.0879
+2025-06-15 23:00:49,672 - INFO - --- Optimizando hiperparámetros para Logistic Regression ---
+2025-06-15 23:00:49,672 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:00:54,989 - INFO - Mejores parámetros para Logistic Regression: {'C': 0.01}
+2025-06-15 23:00:55,044 - INFO - Resultados de Logistic Regression en conjunto de prueba:
+2025-06-15 23:00:55,045 - INFO -   Accuracy: 0.7019
+2025-06-15 23:00:55,047 - INFO -   F1 Score (Weighted): 0.7521
+2025-06-15 23:00:55,048 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.68      0.80       182
+           1       0.28      0.88      0.43        26
+
+    accuracy                           0.70       208
+   macro avg       0.63      0.78      0.61       208
+weighted avg       0.89      0.70      0.75       208
+
+2025-06-15 23:00:55,051 - INFO - --- Optimizando hiperparámetros para Random Forest ---
+2025-06-15 23:00:55,052 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:00:59,148 - INFO - Mejores parámetros para Random Forest: {'max_depth': None, 'min_samples_split': 2}
+2025-06-15 23:00:59,196 - INFO - Resultados de Random Forest en conjunto de prueba:
+2025-06-15 23:00:59,196 - INFO -   Accuracy: 0.8702
+2025-06-15 23:00:59,197 - INFO -   F1 Score (Weighted): 0.8143
+2025-06-15 23:00:59,200 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93       182
+           1       0.00      0.00      0.00        26
+
+    accuracy                           0.87       208
+   macro avg       0.44      0.50      0.47       208
+weighted avg       0.77      0.87      0.81       208
+
+2025-06-15 23:00:59,223 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:00:59,224 - INFO -     Promedio: 1.0000
+2025-06-15 23:00:59,226 - INFO -     Promedio_ultimos_3: 0.9447
+2025-06-15 23:00:59,228 - INFO -     Promedio_global: 0.9128
+2025-06-15 23:00:59,230 - INFO -     Aceleracion_promedio: 0.3294
+2025-06-15 23:00:59,231 - INFO -     Delta_promedio: 0.3185
+2025-06-15 23:00:59,233 - INFO -     Primer_Anio: 0.3017
+2025-06-15 23:00:59,235 - INFO -     Tendencia_promedio: 0.2716
+2025-06-15 23:00:59,236 - INFO -     Variabilidad_promedio: 0.2634
+2025-06-15 23:00:59,238 - INFO -     Volatilidad_rendimiento: 0.2593
+2025-06-15 23:00:59,239 - INFO -     Años_en_sistema: 0.1945
+2025-06-15 23:00:59,241 - INFO - --- Optimizando hiperparámetros para XGBoost ---
+2025-06-15 23:00:59,243 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:01:02,140 - INFO - Mejores parámetros para XGBoost: {'learning_rate': 0.1, 'max_depth': 7}
+2025-06-15 23:01:02,187 - INFO - Resultados de XGBoost en conjunto de prueba:
+2025-06-15 23:01:02,188 - INFO -   Accuracy: 0.8077
+2025-06-15 23:01:02,190 - INFO -   F1 Score (Weighted): 0.8077
+2025-06-15 23:01:02,191 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.89      0.89       182
+           1       0.23      0.23      0.23        26
+
+    accuracy                           0.81       208
+   macro avg       0.56      0.56      0.56       208
+weighted avg       0.81      0.81      0.81       208
+
+2025-06-15 23:01:02,195 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:01:02,197 - INFO -     Promedio: 1.0000
+2025-06-15 23:01:02,198 - INFO -     Aceleracion_promedio: 0.5030
+2025-06-15 23:01:02,200 - INFO -     Curso_4to A: 0.3374
+2025-06-15 23:01:02,202 - INFO -     Tendencia_promedio: 0.3235
+2025-06-15 23:01:02,205 - INFO -     Curso_1ro B: 0.2901
+2025-06-15 23:01:02,206 - INFO -     Primer_Anio: 0.2717
+2025-06-15 23:01:02,209 - INFO -     Curso_5to A: 0.2706
+2025-06-15 23:01:02,211 - INFO -     Promedio_ultimos_3: 0.2621
+2025-06-15 23:01:02,213 - INFO -     Curso_3ro A: 0.2554
+2025-06-15 23:01:02,214 - INFO -     Curso_2do A: 0.2500
+2025-06-15 23:01:02,216 - INFO - --- Optimizando hiperparámetros para Gradient Boosting ---
+2025-06-15 23:01:02,218 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:01:07,081 - INFO - Mejores parámetros para Gradient Boosting: {'learning_rate': 0.05, 'n_estimators': 200}
+2025-06-15 23:01:07,110 - INFO - Resultados de Gradient Boosting en conjunto de prueba:
+2025-06-15 23:01:07,111 - INFO -   Accuracy: 0.8702
+2025-06-15 23:01:07,113 - INFO -   F1 Score (Weighted): 0.8298
+2025-06-15 23:01:07,115 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.98      0.93       182
+           1       0.40      0.08      0.13        26
+
+    accuracy                           0.87       208
+   macro avg       0.64      0.53      0.53       208
+weighted avg       0.82      0.87      0.83       208
+
+2025-06-15 23:01:07,123 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:01:07,125 - INFO -     Promedio: 1.0000
+2025-06-15 23:01:07,126 - INFO -     Promedio_global: 0.4759
+2025-06-15 23:01:07,128 - INFO -     Promedio_ultimos_3: 0.3214
+2025-06-15 23:01:07,130 - INFO -     Delta_promedio: 0.2598
+2025-06-15 23:01:07,132 - INFO -     Primer_Anio: 0.1941
+2025-06-15 23:01:07,134 - INFO -     Aceleracion_promedio: 0.1618
+2025-06-15 23:01:07,136 - INFO -     Genero_M: 0.1612
+2025-06-15 23:01:07,138 - INFO -     Curso_5to B: 0.1173
+2025-06-15 23:01:07,141 - INFO -     Variabilidad_promedio: 0.1150
+2025-06-15 23:01:07,143 - INFO -     Curso_2do A: 0.1025
+2025-06-15 23:01:07,144 - INFO - --- Optimizando hiperparámetros para SVM ---
+2025-06-15 23:01:07,147 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:01:10,537 - INFO - Mejores parámetros para SVM: {'C': 10, 'gamma': 0.1}
+2025-06-15 23:01:10,625 - INFO - Resultados de SVM en conjunto de prueba:
+2025-06-15 23:01:10,627 - INFO -   Accuracy: 0.8077
+2025-06-15 23:01:10,629 - INFO -   F1 Score (Weighted): 0.8160
+2025-06-15 23:01:10,632 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.87      0.89       182
+           1       0.28      0.35      0.31        26
+
+    accuracy                           0.81       208
+   macro avg       0.59      0.61      0.60       208
+weighted avg       0.83      0.81      0.82       208
+
+2025-06-15 23:01:10,635 - INFO - --- Optimizando hiperparámetros para MLP ---
+2025-06-15 23:01:10,639 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:01:12,045 - INFO - Mejores parámetros para MLP: {'alpha': 0.0001, 'hidden_layer_sizes': (100,)}
+2025-06-15 23:01:12,083 - INFO - Resultados de MLP en conjunto de prueba:
+2025-06-15 23:01:12,085 - INFO -   Accuracy: 0.8654
+2025-06-15 23:01:12,088 - INFO -   F1 Score (Weighted): 0.8119
+2025-06-15 23:01:12,090 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93       182
+           1       0.00      0.00      0.00        26
+
+    accuracy                           0.87       208
+   macro avg       0.44      0.49      0.46       208
+weighted avg       0.76      0.87      0.81       208
+
+2025-06-15 23:01:12,091 - INFO - --- Optimizando hiperparámetros para LightGBM ---
+2025-06-15 23:01:12,094 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:01:20,270 - INFO - Mejores parámetros para LightGBM: {'learning_rate': 0.1, 'num_leaves': 50}
+2025-06-15 23:01:20,313 - INFO - Resultados de LightGBM en conjunto de prueba:
+2025-06-15 23:01:20,314 - INFO -   Accuracy: 0.8317
+2025-06-15 23:01:20,316 - INFO -   F1 Score (Weighted): 0.8239
+2025-06-15 23:01:20,318 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.92      0.91       182
+           1       0.29      0.23      0.26        26
+
+    accuracy                           0.83       208
+   macro avg       0.59      0.57      0.58       208
+weighted avg       0.82      0.83      0.82       208
+
+2025-06-15 23:01:20,321 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:01:20,323 - INFO -     Promedio: 1.0000
+2025-06-15 23:01:20,325 - INFO -     Promedio_ultimos_3: 0.9611
+2025-06-15 23:01:20,328 - INFO -     Promedio_global: 0.7436
+2025-06-15 23:01:20,330 - INFO -     Variabilidad_promedio: 0.6966
+2025-06-15 23:01:20,331 - INFO -     Aceleracion_promedio: 0.5799
+2025-06-15 23:01:20,333 - INFO -     Primer_Anio: 0.5450
+2025-06-15 23:01:20,335 - INFO -     Delta_promedio: 0.4980
+2025-06-15 23:01:20,338 - INFO -     Años_en_sistema: 0.3356
+2025-06-15 23:01:20,339 - INFO -     Tendencia_promedio: 0.2993
+2025-06-15 23:01:20,341 - INFO -     Curso_2do A: 0.1866
+2025-06-15 23:01:20,342 - INFO - --- Optimizando hiperparámetros para CatBoost ---
+2025-06-15 23:01:20,344 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:01:54,153 - INFO - Mejores parámetros para CatBoost: {'depth': 4, 'learning_rate': 0.05}
+2025-06-15 23:01:54,185 - INFO - Resultados de CatBoost en conjunto de prueba:
+2025-06-15 23:01:54,186 - INFO -   Accuracy: 0.8510
+2025-06-15 23:01:54,188 - INFO -   F1 Score (Weighted): 0.8408
+2025-06-15 23:01:54,189 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.93      0.92       182
+           1       0.37      0.27      0.31        26
+
+    accuracy                           0.85       208
+   macro avg       0.63      0.60      0.61       208
+weighted avg       0.83      0.85      0.84       208
+
+2025-06-15 23:01:54,191 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:01:54,193 - INFO -     Promedio_global: 1.0000
+2025-06-15 23:01:54,199 - INFO -     Promedio_ultimos_3: 0.9348
+2025-06-15 23:01:54,203 - INFO -     Promedio: 0.8850
+2025-06-15 23:01:54,206 - INFO -     Años_en_sistema: 0.7833
+2025-06-15 23:01:54,210 - INFO -     Primer_Anio: 0.7328
+2025-06-15 23:01:54,211 - INFO -     Delta_promedio: 0.5282
+2025-06-15 23:01:54,215 - INFO -     Aceleracion_promedio: 0.5063
+2025-06-15 23:01:54,217 - INFO -     Variabilidad_promedio: 0.3883
+2025-06-15 23:01:54,221 - INFO -     Curso_2do A: 0.2827
+2025-06-15 23:01:54,222 - INFO -     Tendencia_promedio: 0.2678
+2025-06-15 23:01:54,225 - INFO - 
+--- Mejor modelo seleccionado: CatBoost ---
+2025-06-15 23:01:54,227 - INFO - Basado en F1 Score (Weighted): 0.8408
+2025-06-15 23:01:54,228 - INFO - 
+Evaluando robustez de CatBoost con validación cruzada...
+2025-06-15 23:02:07,629 - INFO - CV Accuracy: 0.9182 (±0.0226)
+2025-06-15 23:02:20,844 - INFO - CV F1: 0.9149 (±0.0222)
+2025-06-15 23:02:33,772 - INFO - CV Precision: 0.9127 (±0.0230)
+2025-06-15 23:02:47,493 - INFO - CV Recall: 0.9182 (±0.0226)
+2025-06-15 23:02:47,497 - INFO - 
+Resumen de métricas de todos los modelos:
+                Modelo  Accuracy  F1_Weighted  Precision_Weighted  Recall_Weighted
+0  Logistic Regression  0.701923     0.752104            0.889228         0.701923
+1        Random Forest  0.870192     0.814267            0.765097         0.870192
+2              XGBoost  0.807692     0.807692            0.807692         0.807692
+3    Gradient Boosting  0.870192     0.829765            0.821552         0.870192
+4                  SVM  0.807692     0.816028            0.825639         0.807692
+5                  MLP  0.865385     0.811856            0.764563         0.865385
+6             LightGBM  0.831731     0.823920            0.817131         0.831731
+7             CatBoost  0.850962     0.840776            0.833090         0.850962
+2025-06-15 23:02:47,503 - INFO - Entrenamiento y evaluación de modelos completado.
+2025-06-15 23:02:47,506 - INFO - Generando visualizaciones...
+2025-06-15 23:02:48,018 - INFO - Gráfico de comparación de modelos guardado como model_comparison.png
+2025-06-15 23:02:48,841 - INFO - Curva ROC guardada como roc_curve_CatBoost.png
+2025-06-15 23:02:49,311 - INFO - Curva Precision-Recall guardada como precision_recall_curve_CatBoost.png
+2025-06-15 23:02:49,835 - INFO - Matriz de confusión guardada como confusion_matrix_CatBoost.png
+2025-06-15 23:02:50,375 - INFO - Comparación de curvas ROC guardada como roc_curves_comparison.png
+2025-06-15 23:02:50,724 - INFO - Visualizaciones generadas.
+2025-06-15 23:02:51,126 - INFO - Gráfico de resultados de validación cruzada guardado como cross_validation_results.png
+2025-06-15 23:02:51,376 - INFO - Iniciando proyección de tendencias para 3 años...
+2025-06-15 23:02:51,381 - INFO - Proyectando desde 2025 hasta 2031
+2025-06-15 23:02:51,383 - INFO - Año base (2024): 31 reprobados (reales)
+2025-06-15 23:02:51,386 - INFO - Proyectando para el año: 2025
+2025-06-15 23:02:51,391 - INFO - Iniciando creación de características...
+2025-06-15 23:02:51,702 - INFO - Creación de características completada.
+2025-06-15 23:02:51,753 - INFO - Año 2025: 23 reprobados (predicción)
+2025-06-15 23:02:51,769 - INFO - Proyectando para el año: 2026
+2025-06-15 23:02:51,771 - INFO - Iniciando creación de características...
+2025-06-15 23:02:52,060 - INFO - Creación de características completada.
+2025-06-15 23:02:52,099 - INFO - Año 2026: 17 reprobados (predicción)
+2025-06-15 23:02:52,112 - INFO - Proyectando para el año: 2027
+2025-06-15 23:02:52,115 - INFO - Iniciando creación de características...
+2025-06-15 23:02:52,435 - INFO - Creación de características completada.
+2025-06-15 23:02:52,475 - INFO - Año 2027: 12 reprobados (predicción)
+2025-06-15 23:02:52,492 - INFO - Proyectando para el año: 2028
+2025-06-15 23:02:52,493 - INFO - Iniciando creación de características...
+2025-06-15 23:02:52,777 - INFO - Creación de características completada.
+2025-06-15 23:02:52,816 - INFO - Año 2028: 15 reprobados (predicción)
+2025-06-15 23:02:52,829 - INFO - Proyectando para el año: 2029
+2025-06-15 23:02:52,832 - INFO - Iniciando creación de características...
+2025-06-15 23:02:53,137 - INFO - Creación de características completada.
+2025-06-15 23:02:53,176 - INFO - Año 2029: 14 reprobados (predicción)
+2025-06-15 23:02:53,194 - INFO - Proyectando para el año: 2030
+2025-06-15 23:02:53,195 - INFO - Iniciando creación de características...
+2025-06-15 23:02:53,555 - INFO - Creación de características completada.
+2025-06-15 23:02:53,593 - INFO - Año 2030: 10 reprobados (predicción)
+2025-06-15 23:02:53,608 - INFO - Generando gráfico de proyección de reprobaciones...
+2025-06-15 23:02:53,815 - INFO - Gráfico de proyección guardado como future_projection.png
+2025-06-15 23:02:53,978 - ERROR - Error durante la proyección de tendencias futuras: [Errno 13] Permission denied: './Salidas del programa/pedicciones_futuras_detalladas.csv'
+2025-06-15 23:02:53,980 - INFO - Iniciando creación de características...
+2025-06-15 23:02:54,239 - INFO - Creación de características completada.
+2025-06-15 23:02:54,240 - INFO - Identificando estudiantes en riesgo para el próximo año...
+2025-06-15 23:02:54,244 - INFO - Iniciando creación de características...
+2025-06-15 23:02:54,512 - INFO - Creación de características completada.
+2025-06-15 23:02:54,534 - INFO - Ajustando predicciones para 63 estudiantes nuevos
+2025-06-15 23:02:54,555 - INFO - Distribución de niveles de riesgo:
+Nivel_Riesgo
+Bajo        247
+Medio        13
+Alto         10
+Muy Alto     10
+2025-06-15 23:02:54,569 - INFO - Generando visualizaciones de distribución de riesgo...
+2025-06-15 23:02:54,759 - INFO - Gráfico de distribución de riesgo guardado como risk_distribution.png
+2025-06-15 23:02:55,200 - INFO - Gráfico de distribución de riesgo por género guardado como risk_distribution_gender.png
+2025-06-15 23:02:55,715 - INFO - Gráfico de distribución de riesgo por nivel guardado como risk_distribution_level.png
+2025-06-15 23:02:55,949 - INFO - Identificación de estudiantes en riesgo completada.
+2025-06-15 23:02:55,951 - INFO - Preparando perfiles de intervención para los 50 estudiantes de mayor riesgo...
+2025-06-15 23:02:55,955 - INFO - Seleccionados 20 estudiantes con riesgo Alto o Muy Alto (máximo 50).
+2025-06-15 23:02:55,984 - INFO - Perfiles de intervención preparados.
+2025-06-15 23:02:55,986 - INFO - 
+--- Resumen de Estudiantes en Riesgo (Próximo Año, Top 10) ---
+2025-06-15 23:02:55,996 - INFO - 
+           Codigo Rude  Probabilidad_Reprobacion Genero       Nivel  Curso  Promedio_Actual  Reprobaciones_acumuladas  Años_en_sistema  Volatilidad_rendimiento Nivel_Riesgo
+2523   719500632017028                  0.993296      F  Secundaria  1ro A               68                         0                1                      0.0     Muy Alto
+1347  519500012021961A                  0.981703      M    Primario  2do A               56                         0                1                      0.0     Muy Alto
+2568   719500632014457                  0.971143      F  Secundaria  3ro A               68                         0                1                      0.0     Muy Alto
+2578   719500632014990                  0.970882      M  Secundaria  3ro A               56                         1                1                      0.0     Muy Alto
+2543   519500012017009                  0.944964      M  Secundaria  1ro A               56                         1                1                      0.0     Muy Alto
+2593   719500632013951                  0.932651      F  Secundaria  4to A               69                         0                1                      0.0     Muy Alto
+2559   519500012016009                  0.841251      M  Secundaria  2do A               57                         1                1                      0.0     Muy Alto
+1355  7195006820213855                  0.813591      F    Primario  2do A               57                         0                1                      0.0     Muy Alto
+1369  5195000120232293                  0.813591      F    Primario  2do A               57                         0                1                      0.0     Muy Alto
+2524   819812082016052                  0.755049      M  Secundaria  1ro A               57                         1                1                      0.0     Muy Alto
+2025-06-15 23:02:56,002 - INFO - Lista completa de estudiantes en riesgo guardada en 'estudiantes_en_riesgo.csv'
+2025-06-15 23:02:56,003 - INFO - 
+--- Resumen de Perfiles de Intervención (Prioritarios, Top 5) ---
+2025-06-15 23:02:56,013 - INFO - 
+        Codigo Rude       Nivel  Curso  Probabilidad_Reprobacion Nivel_Riesgo                                            Razones_Riesgo                                                                      Intervenciones_Recomendadas
+0   719500632017028  Secundaria  1ro A                  0.993296     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+1  519500012021961A    Primario  2do A                  0.981703     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+2   719500632014457  Secundaria  3ro A                  0.971143     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+3   719500632014990  Secundaria  3ro A                  0.970882     Muy Alto  Promedio bajo (<70), Rendimiento bajo vs curso (<-5 pts)  Refuerzo académico específico, Integración a grupos de estudio, Monitoreo continuo del progreso
+4   519500012017009  Secundaria  1ro A                  0.944964     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+2025-06-15 23:02:56,018 - INFO - Perfiles de intervención completos guardados en 'perfiles_intervencion.csv'
+2025-06-15 23:02:56,027 - INFO - DataFrame con detalles y predicciones del próximo año guardado en 'predicciones_completas_proximo_año.csv'
+2025-06-15 23:02:56,029 - INFO - --- FIN DEL PROCESO ---
+2025-06-15 23:16:52,332 - INFO - --- INICIO DEL PROCESO DE ANÁLISIS DE RIESGO ESTUDIANTIL ---
+2025-06-15 23:16:52,334 - INFO - Usando archivo de datos: ./Salidas del programa/tabla_minable.csv
+2025-06-15 23:16:52,345 - INFO - Datos cargados exitosamente: 2641 filas, 7 columnas
+2025-06-15 23:16:52,347 - INFO - Iniciando preprocesamiento de datos...
+2025-06-15 23:16:52,357 - INFO - Año máximo en los datos: 2024
+2025-06-15 23:16:52,362 - INFO - Datos para modelado: 2361 filas (hasta 2023)
+2025-06-15 23:16:52,363 - INFO - Datos para predicción futura: 280 filas (2024)
+2025-06-15 23:16:52,368 - WARNING - Se eliminaron 507 filas con 'Reprobado_siguiente' nulo (del último año por estudiante).
+2025-06-15 23:16:52,369 - INFO - Preprocesamiento de datos completado.
+2025-06-15 23:16:52,371 - INFO - Iniciando creación de características...
+2025-06-15 23:16:52,908 - INFO - Creación de características completada.
+2025-06-15 23:16:52,910 - INFO - Año de validación (prueba): 2023
+2025-06-15 23:16:52,911 - INFO - Realizando división temporal: entrenamiento < 2023, prueba = 2023
+2025-06-15 23:16:52,916 - INFO - Tamaño entrenamiento: 1646 filas
+2025-06-15 23:16:52,917 - INFO - Tamaño prueba: 208 filas
+2025-06-15 23:16:52,922 - INFO - Preparando datos para modelado (codificación y escalado)...
+2025-06-15 23:16:52,923 - INFO - Aplicando One-Hot Encoding a: ['Genero', 'Nivel', 'Curso']
+2025-06-15 23:16:52,938 - INFO - Columnas a eliminar antes de escalar: ['Reprobado_siguiente', 'Gestion', 'Codigo Rude']
+2025-06-15 23:16:52,943 - INFO - Número de características para el modelo: 27
+2025-06-15 23:16:52,944 - INFO - Aplicando StandardScaler a las características.
+2025-06-15 23:16:52,959 - INFO - Preparación de datos para modelado completada.
+2025-06-15 23:16:52,960 - INFO - Distribución de clases en entrenamiento:
+2025-06-15 23:16:52,962 - INFO -   Clase 0 (No reprobados): 1555 (94.47%)
+2025-06-15 23:16:52,964 - INFO -   Clase 1 (Reprobados): 91 (5.53%)
+2025-06-15 23:16:52,970 - INFO - Iniciando entrenamiento y evaluación de modelos...
+2025-06-15 23:16:52,975 - INFO - Pesos de clase calculados (balanced): {0: 0.5292604501607717, 1: 9.043956043956044}
+2025-06-15 23:16:52,976 - INFO - scale_pos_weight para XGBoost: 17.0879
+2025-06-15 23:16:52,978 - INFO - --- Optimizando hiperparámetros para Logistic Regression ---
+2025-06-15 23:16:52,980 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:16:58,216 - INFO - Mejores parámetros para Logistic Regression: {'C': 0.01}
+2025-06-15 23:16:58,245 - INFO - Resultados de Logistic Regression en conjunto de prueba:
+2025-06-15 23:16:58,246 - INFO -   Accuracy: 0.7019
+2025-06-15 23:16:58,248 - INFO -   F1 Score (Weighted): 0.7521
+2025-06-15 23:16:58,250 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.68      0.80       182
+           1       0.28      0.88      0.43        26
+
+    accuracy                           0.70       208
+   macro avg       0.63      0.78      0.61       208
+weighted avg       0.89      0.70      0.75       208
+
+2025-06-15 23:16:58,252 - INFO - --- Optimizando hiperparámetros para Random Forest ---
+2025-06-15 23:16:58,254 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:17:02,049 - INFO - Mejores parámetros para Random Forest: {'max_depth': None, 'min_samples_split': 2}
+2025-06-15 23:17:02,093 - INFO - Resultados de Random Forest en conjunto de prueba:
+2025-06-15 23:17:02,094 - INFO -   Accuracy: 0.8702
+2025-06-15 23:17:02,095 - INFO -   F1 Score (Weighted): 0.8143
+2025-06-15 23:17:02,098 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93       182
+           1       0.00      0.00      0.00        26
+
+    accuracy                           0.87       208
+   macro avg       0.44      0.50      0.47       208
+weighted avg       0.77      0.87      0.81       208
+
+2025-06-15 23:17:02,121 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:17:02,123 - INFO -     Promedio: 1.0000
+2025-06-15 23:17:02,124 - INFO -     Promedio_ultimos_3: 0.9447
+2025-06-15 23:17:02,126 - INFO -     Promedio_global: 0.9128
+2025-06-15 23:17:02,128 - INFO -     Aceleracion_promedio: 0.3294
+2025-06-15 23:17:02,129 - INFO -     Delta_promedio: 0.3185
+2025-06-15 23:17:02,131 - INFO -     Primer_Anio: 0.3017
+2025-06-15 23:17:02,132 - INFO -     Tendencia_promedio: 0.2716
+2025-06-15 23:17:02,134 - INFO -     Variabilidad_promedio: 0.2634
+2025-06-15 23:17:02,135 - INFO -     Volatilidad_rendimiento: 0.2593
+2025-06-15 23:17:02,137 - INFO -     Años_en_sistema: 0.1945
+2025-06-15 23:17:02,138 - INFO - --- Optimizando hiperparámetros para XGBoost ---
+2025-06-15 23:17:02,140 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:17:03,779 - INFO - Mejores parámetros para XGBoost: {'learning_rate': 0.1, 'max_depth': 7}
+2025-06-15 23:17:03,822 - INFO - Resultados de XGBoost en conjunto de prueba:
+2025-06-15 23:17:03,823 - INFO -   Accuracy: 0.8077
+2025-06-15 23:17:03,824 - INFO -   F1 Score (Weighted): 0.8077
+2025-06-15 23:17:03,827 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.89      0.89       182
+           1       0.23      0.23      0.23        26
+
+    accuracy                           0.81       208
+   macro avg       0.56      0.56      0.56       208
+weighted avg       0.81      0.81      0.81       208
+
+2025-06-15 23:17:03,830 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:17:03,832 - INFO -     Promedio: 1.0000
+2025-06-15 23:17:03,834 - INFO -     Aceleracion_promedio: 0.5030
+2025-06-15 23:17:03,834 - INFO -     Curso_4to A: 0.3374
+2025-06-15 23:17:03,837 - INFO -     Tendencia_promedio: 0.3235
+2025-06-15 23:17:03,838 - INFO -     Curso_1ro B: 0.2901
+2025-06-15 23:17:03,840 - INFO -     Primer_Anio: 0.2717
+2025-06-15 23:17:03,842 - INFO -     Curso_5to A: 0.2706
+2025-06-15 23:17:03,843 - INFO -     Promedio_ultimos_3: 0.2621
+2025-06-15 23:17:03,845 - INFO -     Curso_3ro A: 0.2554
+2025-06-15 23:17:03,847 - INFO -     Curso_2do A: 0.2500
+2025-06-15 23:17:03,847 - INFO - --- Optimizando hiperparámetros para Gradient Boosting ---
+2025-06-15 23:17:03,849 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:17:08,486 - INFO - Mejores parámetros para Gradient Boosting: {'learning_rate': 0.05, 'n_estimators': 200}
+2025-06-15 23:17:08,508 - INFO - Resultados de Gradient Boosting en conjunto de prueba:
+2025-06-15 23:17:08,509 - INFO -   Accuracy: 0.8702
+2025-06-15 23:17:08,510 - INFO -   F1 Score (Weighted): 0.8298
+2025-06-15 23:17:08,512 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.98      0.93       182
+           1       0.40      0.08      0.13        26
+
+    accuracy                           0.87       208
+   macro avg       0.64      0.53      0.53       208
+weighted avg       0.82      0.87      0.83       208
+
+2025-06-15 23:17:08,517 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:17:08,518 - INFO -     Promedio: 1.0000
+2025-06-15 23:17:08,520 - INFO -     Promedio_global: 0.4759
+2025-06-15 23:17:08,521 - INFO -     Promedio_ultimos_3: 0.3214
+2025-06-15 23:17:08,523 - INFO -     Delta_promedio: 0.2598
+2025-06-15 23:17:08,524 - INFO -     Primer_Anio: 0.1941
+2025-06-15 23:17:08,525 - INFO -     Aceleracion_promedio: 0.1618
+2025-06-15 23:17:08,527 - INFO -     Genero_M: 0.1612
+2025-06-15 23:17:08,528 - INFO -     Curso_5to B: 0.1173
+2025-06-15 23:17:08,530 - INFO -     Variabilidad_promedio: 0.1150
+2025-06-15 23:17:08,532 - INFO -     Curso_2do A: 0.1025
+2025-06-15 23:17:08,533 - INFO - --- Optimizando hiperparámetros para SVM ---
+2025-06-15 23:17:08,535 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:17:11,006 - INFO - Mejores parámetros para SVM: {'C': 10, 'gamma': 0.1}
+2025-06-15 23:17:11,049 - INFO - Resultados de SVM en conjunto de prueba:
+2025-06-15 23:17:11,051 - INFO -   Accuracy: 0.8077
+2025-06-15 23:17:11,052 - INFO -   F1 Score (Weighted): 0.8160
+2025-06-15 23:17:11,053 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.87      0.89       182
+           1       0.28      0.35      0.31        26
+
+    accuracy                           0.81       208
+   macro avg       0.59      0.61      0.60       208
+weighted avg       0.83      0.81      0.82       208
+
+2025-06-15 23:17:11,055 - INFO - --- Optimizando hiperparámetros para MLP ---
+2025-06-15 23:17:11,057 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:17:11,860 - INFO - Mejores parámetros para MLP: {'alpha': 0.0001, 'hidden_layer_sizes': (100,)}
+2025-06-15 23:17:11,885 - INFO - Resultados de MLP en conjunto de prueba:
+2025-06-15 23:17:11,886 - INFO -   Accuracy: 0.8654
+2025-06-15 23:17:11,887 - INFO -   F1 Score (Weighted): 0.8119
+2025-06-15 23:17:11,889 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93       182
+           1       0.00      0.00      0.00        26
+
+    accuracy                           0.87       208
+   macro avg       0.44      0.49      0.46       208
+weighted avg       0.76      0.87      0.81       208
+
+2025-06-15 23:17:11,890 - INFO - --- Optimizando hiperparámetros para LightGBM ---
+2025-06-15 23:17:11,892 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:17:18,713 - INFO - Mejores parámetros para LightGBM: {'learning_rate': 0.1, 'num_leaves': 50}
+2025-06-15 23:17:18,760 - INFO - Resultados de LightGBM en conjunto de prueba:
+2025-06-15 23:17:18,763 - INFO -   Accuracy: 0.8317
+2025-06-15 23:17:18,764 - INFO -   F1 Score (Weighted): 0.8239
+2025-06-15 23:17:18,767 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.92      0.91       182
+           1       0.29      0.23      0.26        26
+
+    accuracy                           0.83       208
+   macro avg       0.59      0.57      0.58       208
+weighted avg       0.82      0.83      0.82       208
+
+2025-06-15 23:17:18,770 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:17:18,773 - INFO -     Promedio: 1.0000
+2025-06-15 23:17:18,774 - INFO -     Promedio_ultimos_3: 0.9611
+2025-06-15 23:17:18,779 - INFO -     Promedio_global: 0.7436
+2025-06-15 23:17:18,782 - INFO -     Variabilidad_promedio: 0.6966
+2025-06-15 23:17:18,785 - INFO -     Aceleracion_promedio: 0.5799
+2025-06-15 23:17:18,787 - INFO -     Primer_Anio: 0.5450
+2025-06-15 23:17:18,788 - INFO -     Delta_promedio: 0.4980
+2025-06-15 23:17:18,789 - INFO -     Años_en_sistema: 0.3356
+2025-06-15 23:17:18,793 - INFO -     Tendencia_promedio: 0.2993
+2025-06-15 23:17:18,798 - INFO -     Curso_2do A: 0.1866
+2025-06-15 23:17:18,800 - INFO - --- Optimizando hiperparámetros para CatBoost ---
+2025-06-15 23:17:18,801 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:17:49,792 - INFO - Mejores parámetros para CatBoost: {'depth': 4, 'learning_rate': 0.05}
+2025-06-15 23:17:49,823 - INFO - Resultados de CatBoost en conjunto de prueba:
+2025-06-15 23:17:49,825 - INFO -   Accuracy: 0.8510
+2025-06-15 23:17:49,827 - INFO -   F1 Score (Weighted): 0.8408
+2025-06-15 23:17:49,828 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.93      0.92       182
+           1       0.37      0.27      0.31        26
+
+    accuracy                           0.85       208
+   macro avg       0.63      0.60      0.61       208
+weighted avg       0.83      0.85      0.84       208
+
+2025-06-15 23:17:49,831 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:17:49,833 - INFO -     Promedio_global: 1.0000
+2025-06-15 23:17:49,834 - INFO -     Promedio_ultimos_3: 0.9348
+2025-06-15 23:17:49,836 - INFO -     Promedio: 0.8850
+2025-06-15 23:17:49,837 - INFO -     Años_en_sistema: 0.7833
+2025-06-15 23:17:49,839 - INFO -     Primer_Anio: 0.7328
+2025-06-15 23:17:49,841 - INFO -     Delta_promedio: 0.5282
+2025-06-15 23:17:49,843 - INFO -     Aceleracion_promedio: 0.5063
+2025-06-15 23:17:49,844 - INFO -     Variabilidad_promedio: 0.3883
+2025-06-15 23:17:49,846 - INFO -     Curso_2do A: 0.2827
+2025-06-15 23:17:49,847 - INFO -     Tendencia_promedio: 0.2678
+2025-06-15 23:17:49,850 - INFO - 
+--- Mejor modelo seleccionado: CatBoost ---
+2025-06-15 23:17:49,852 - INFO - Basado en F1 Score (Weighted): 0.8408
+2025-06-15 23:17:49,855 - INFO - 
+Evaluando robustez de CatBoost con validación cruzada...
+2025-06-15 23:18:01,513 - INFO - CV Accuracy: 0.9182 (±0.0226)
+2025-06-15 23:18:12,943 - INFO - CV F1: 0.9149 (±0.0222)
+2025-06-15 23:18:24,880 - INFO - CV Precision: 0.9127 (±0.0230)
+2025-06-15 23:18:36,614 - INFO - CV Recall: 0.9182 (±0.0226)
+2025-06-15 23:18:36,618 - INFO - 
+Resumen de métricas de todos los modelos:
+                Modelo  Accuracy  F1_Weighted  Precision_Weighted  Recall_Weighted
+0  Logistic Regression  0.701923     0.752104            0.889228         0.701923
+1        Random Forest  0.870192     0.814267            0.765097         0.870192
+2              XGBoost  0.807692     0.807692            0.807692         0.807692
+3    Gradient Boosting  0.870192     0.829765            0.821552         0.870192
+4                  SVM  0.807692     0.816028            0.825639         0.807692
+5                  MLP  0.865385     0.811856            0.764563         0.865385
+6             LightGBM  0.831731     0.823920            0.817131         0.831731
+7             CatBoost  0.850962     0.840776            0.833090         0.850962
+2025-06-15 23:18:36,620 - INFO - Entrenamiento y evaluación de modelos completado.
+2025-06-15 23:18:36,622 - INFO - Generando visualizaciones...
+2025-06-15 23:18:36,998 - INFO - Gráfico de comparación de modelos guardado como model_comparison.png
+2025-06-15 23:18:37,412 - INFO - Curva ROC guardada como roc_curve_CatBoost.png
+2025-06-15 23:18:37,748 - INFO - Curva Precision-Recall guardada como precision_recall_curve_CatBoost.png
+2025-06-15 23:18:38,126 - INFO - Matriz de confusión guardada como confusion_matrix_CatBoost.png
+2025-06-15 23:18:38,678 - INFO - Comparación de curvas ROC guardada como roc_curves_comparison.png
+2025-06-15 23:18:39,053 - INFO - Visualizaciones generadas.
+2025-06-15 23:18:39,350 - INFO - Gráfico de resultados de validación cruzada guardado como cross_validation_results.png
+2025-06-15 23:18:39,571 - INFO - Iniciando proyección de tendencias para 3 años...
+2025-06-15 23:18:39,572 - INFO - Proyectando desde 2025 hasta 2031
+2025-06-15 23:18:39,578 - INFO - Año base (2024): 31 reprobados (reales)
+2025-06-15 23:18:39,580 - INFO - Proyectando para el año: 2025
+2025-06-15 23:18:39,581 - INFO - Iniciando creación de características...
+2025-06-15 23:18:39,853 - INFO - Creación de características completada.
+2025-06-15 23:18:39,886 - INFO - Año 2025: 23 reprobados (predicción)
+2025-06-15 23:18:39,898 - INFO - Proyectando para el año: 2026
+2025-06-15 23:18:39,899 - INFO - Iniciando creación de características...
+2025-06-15 23:18:40,125 - INFO - Creación de características completada.
+2025-06-15 23:18:40,158 - INFO - Año 2026: 17 reprobados (predicción)
+2025-06-15 23:18:40,174 - INFO - Proyectando para el año: 2027
+2025-06-15 23:18:40,175 - INFO - Iniciando creación de características...
+2025-06-15 23:18:40,400 - INFO - Creación de características completada.
+2025-06-15 23:18:40,433 - INFO - Año 2027: 12 reprobados (predicción)
+2025-06-15 23:18:40,446 - INFO - Proyectando para el año: 2028
+2025-06-15 23:18:40,448 - INFO - Iniciando creación de características...
+2025-06-15 23:18:40,688 - INFO - Creación de características completada.
+2025-06-15 23:18:40,728 - INFO - Año 2028: 15 reprobados (predicción)
+2025-06-15 23:18:40,744 - INFO - Proyectando para el año: 2029
+2025-06-15 23:18:40,746 - INFO - Iniciando creación de características...
+2025-06-15 23:18:41,030 - INFO - Creación de características completada.
+2025-06-15 23:18:41,071 - INFO - Año 2029: 14 reprobados (predicción)
+2025-06-15 23:18:41,087 - INFO - Proyectando para el año: 2030
+2025-06-15 23:18:41,089 - INFO - Iniciando creación de características...
+2025-06-15 23:18:41,394 - INFO - Creación de características completada.
+2025-06-15 23:18:41,433 - INFO - Año 2030: 10 reprobados (predicción)
+2025-06-15 23:18:41,452 - INFO - Generando gráfico de proyección de reprobaciones...
+2025-06-15 23:18:41,697 - INFO - Gráfico de proyección guardado como future_projection.png
+2025-06-15 23:18:41,913 - INFO - Predicciones futuras detalladas guardadas en 'predicciones_futuras_detalladas.csv'
+2025-06-15 23:18:41,915 - INFO - Iniciando creación de características...
+2025-06-15 23:18:42,218 - INFO - Creación de características completada.
+2025-06-15 23:18:42,220 - INFO - Identificando estudiantes en riesgo para el próximo año...
+2025-06-15 23:18:42,222 - INFO - Iniciando creación de características...
+2025-06-15 23:18:42,694 - INFO - Creación de características completada.
+2025-06-15 23:18:42,711 - INFO - Ajustando predicciones para 63 estudiantes nuevos
+2025-06-15 23:18:42,719 - INFO - Distribución de niveles de riesgo:
+Nivel_Riesgo
+Bajo        247
+Medio        13
+Alto         10
+Muy Alto     10
+2025-06-15 23:18:42,731 - INFO - Generando visualizaciones de distribución de riesgo...
+2025-06-15 23:18:42,970 - INFO - Gráfico de distribución de riesgo guardado como risk_distribution.png
+2025-06-15 23:18:43,420 - INFO - Gráfico de distribución de riesgo por género guardado como risk_distribution_gender.png
+2025-06-15 23:18:43,951 - INFO - Gráfico de distribución de riesgo por nivel guardado como risk_distribution_level.png
+2025-06-15 23:18:44,139 - INFO - Identificación de estudiantes en riesgo completada.
+2025-06-15 23:18:44,139 - INFO - Preparando perfiles de intervención para los 50 estudiantes de mayor riesgo...
+2025-06-15 23:18:44,144 - INFO - Seleccionados 20 estudiantes con riesgo Alto o Muy Alto (máximo 50).
+2025-06-15 23:18:44,158 - INFO - Perfiles de intervención preparados.
+2025-06-15 23:18:44,159 - INFO - 
+--- Resumen de Estudiantes en Riesgo (Próximo Año, Top 10) ---
+2025-06-15 23:18:44,164 - INFO - 
+           Codigo Rude  Probabilidad_Reprobacion Genero       Nivel  Curso  Promedio_Actual  Reprobaciones_acumuladas  Años_en_sistema  Volatilidad_rendimiento Nivel_Riesgo
+2523   719500632017028                  0.993296      F  Secundaria  1ro A               68                         0                1                      0.0     Muy Alto
+1347  519500012021961A                  0.981703      M    Primario  2do A               56                         0                1                      0.0     Muy Alto
+2568   719500632014457                  0.971143      F  Secundaria  3ro A               68                         0                1                      0.0     Muy Alto
+2578   719500632014990                  0.970882      M  Secundaria  3ro A               56                         1                1                      0.0     Muy Alto
+2543   519500012017009                  0.944964      M  Secundaria  1ro A               56                         1                1                      0.0     Muy Alto
+2593   719500632013951                  0.932651      F  Secundaria  4to A               69                         0                1                      0.0     Muy Alto
+2559   519500012016009                  0.841251      M  Secundaria  2do A               57                         1                1                      0.0     Muy Alto
+1355  7195006820213855                  0.813591      F    Primario  2do A               57                         0                1                      0.0     Muy Alto
+1369  5195000120232293                  0.813591      F    Primario  2do A               57                         0                1                      0.0     Muy Alto
+2524   819812082016052                  0.755049      M  Secundaria  1ro A               57                         1                1                      0.0     Muy Alto
+2025-06-15 23:18:44,171 - INFO - Lista completa de estudiantes en riesgo guardada en 'estudiantes_en_riesgo.csv'
+2025-06-15 23:18:44,172 - INFO - 
+--- Resumen de Perfiles de Intervención (Prioritarios, Top 5) ---
+2025-06-15 23:18:44,179 - INFO - 
+        Codigo Rude       Nivel  Curso  Probabilidad_Reprobacion Nivel_Riesgo                                            Razones_Riesgo                                                                      Intervenciones_Recomendadas
+0   719500632017028  Secundaria  1ro A                  0.993296     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+1  519500012021961A    Primario  2do A                  0.981703     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+2   719500632014457  Secundaria  3ro A                  0.971143     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+3   719500632014990  Secundaria  3ro A                  0.970882     Muy Alto  Promedio bajo (<70), Rendimiento bajo vs curso (<-5 pts)  Refuerzo académico específico, Integración a grupos de estudio, Monitoreo continuo del progreso
+4   519500012017009  Secundaria  1ro A                  0.944964     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+2025-06-15 23:18:44,185 - INFO - Perfiles de intervención completos guardados en 'perfiles_intervencion.csv'
+2025-06-15 23:18:44,194 - INFO - DataFrame con detalles y predicciones del próximo año guardado en 'predicciones_completas_proximo_año.csv'
+2025-06-15 23:18:44,196 - INFO - --- FIN DEL PROCESO ---
+2025-06-15 23:26:39,075 - INFO - --- INICIO DEL PROCESO DE ANÁLISIS DE RIESGO ESTUDIANTIL ---
+2025-06-15 23:26:39,078 - INFO - Usando archivo de datos: ./Salidas del programa/tabla_minable.csv
+2025-06-15 23:26:39,090 - INFO - Datos cargados exitosamente: 2641 filas, 7 columnas
+2025-06-15 23:26:39,092 - INFO - Iniciando preprocesamiento de datos...
+2025-06-15 23:26:39,105 - INFO - Año máximo en los datos: 2024
+2025-06-15 23:26:39,112 - INFO - Datos para modelado: 2361 filas (hasta 2023)
+2025-06-15 23:26:39,114 - INFO - Datos para predicción futura: 280 filas (2024)
+2025-06-15 23:26:39,119 - WARNING - Se eliminaron 507 filas con 'Reprobado_siguiente' nulo (del último año por estudiante).
+2025-06-15 23:26:39,122 - INFO - Preprocesamiento de datos completado.
+2025-06-15 23:26:39,124 - INFO - Iniciando creación de características...
+2025-06-15 23:26:39,913 - INFO - Creación de características completada.
+2025-06-15 23:26:39,914 - INFO - Año de validación (prueba): 2023
+2025-06-15 23:26:39,915 - INFO - Realizando división temporal: entrenamiento < 2023, prueba = 2023
+2025-06-15 23:26:39,922 - INFO - Tamaño entrenamiento: 1646 filas
+2025-06-15 23:26:39,922 - INFO - Tamaño prueba: 208 filas
+2025-06-15 23:26:39,927 - INFO - Preparando datos para modelado (codificación y escalado)...
+2025-06-15 23:26:39,929 - INFO - Aplicando One-Hot Encoding a: ['Genero', 'Nivel', 'Curso']
+2025-06-15 23:26:39,944 - INFO - Columnas a eliminar antes de escalar: ['Reprobado_siguiente', 'Gestion', 'Codigo Rude']
+2025-06-15 23:26:39,950 - INFO - Número de características para el modelo: 27
+2025-06-15 23:26:39,950 - INFO - Aplicando StandardScaler a las características.
+2025-06-15 23:26:39,966 - INFO - Preparación de datos para modelado completada.
+2025-06-15 23:26:39,967 - INFO - Distribución de clases en entrenamiento:
+2025-06-15 23:26:39,969 - INFO -   Clase 0 (No reprobados): 1555 (94.47%)
+2025-06-15 23:26:39,970 - INFO -   Clase 1 (Reprobados): 91 (5.53%)
+2025-06-15 23:26:39,972 - INFO - Iniciando entrenamiento y evaluación de modelos...
+2025-06-15 23:26:39,979 - INFO - Pesos de clase calculados (balanced): {0: 0.5292604501607717, 1: 9.043956043956044}
+2025-06-15 23:26:39,981 - INFO - scale_pos_weight para XGBoost: 17.0879
+2025-06-15 23:26:39,983 - INFO - --- Optimizando hiperparámetros para Logistic Regression ---
+2025-06-15 23:26:39,984 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:26:45,150 - INFO - Mejores parámetros para Logistic Regression: {'C': 0.01}
+2025-06-15 23:26:45,192 - INFO - Resultados de Logistic Regression en conjunto de prueba:
+2025-06-15 23:26:45,193 - INFO -   Accuracy: 0.7019
+2025-06-15 23:26:45,195 - INFO -   F1 Score (Weighted): 0.7521
+2025-06-15 23:26:45,197 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.68      0.80       182
+           1       0.28      0.88      0.43        26
+
+    accuracy                           0.70       208
+   macro avg       0.63      0.78      0.61       208
+weighted avg       0.89      0.70      0.75       208
+
+2025-06-15 23:26:45,199 - INFO - --- Optimizando hiperparámetros para Random Forest ---
+2025-06-15 23:26:45,200 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:26:49,721 - INFO - Mejores parámetros para Random Forest: {'max_depth': None, 'min_samples_split': 2}
+2025-06-15 23:26:49,778 - INFO - Resultados de Random Forest en conjunto de prueba:
+2025-06-15 23:26:49,780 - INFO -   Accuracy: 0.8702
+2025-06-15 23:26:49,785 - INFO -   F1 Score (Weighted): 0.8143
+2025-06-15 23:26:49,786 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93       182
+           1       0.00      0.00      0.00        26
+
+    accuracy                           0.87       208
+   macro avg       0.44      0.50      0.47       208
+weighted avg       0.77      0.87      0.81       208
+
+2025-06-15 23:26:49,820 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:26:49,823 - INFO -     Promedio: 1.0000
+2025-06-15 23:26:49,829 - INFO -     Promedio_ultimos_3: 0.9447
+2025-06-15 23:26:49,832 - INFO -     Promedio_global: 0.9128
+2025-06-15 23:26:49,843 - INFO -     Aceleracion_promedio: 0.3294
+2025-06-15 23:26:49,854 - INFO -     Delta_promedio: 0.3185
+2025-06-15 23:26:49,860 - INFO -     Primer_Anio: 0.3017
+2025-06-15 23:26:49,867 - INFO -     Tendencia_promedio: 0.2716
+2025-06-15 23:26:49,869 - INFO -     Variabilidad_promedio: 0.2634
+2025-06-15 23:26:49,873 - INFO -     Volatilidad_rendimiento: 0.2593
+2025-06-15 23:26:49,875 - INFO -     Años_en_sistema: 0.1945
+2025-06-15 23:26:49,880 - INFO - --- Optimizando hiperparámetros para XGBoost ---
+2025-06-15 23:26:49,883 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:26:51,707 - INFO - Mejores parámetros para XGBoost: {'learning_rate': 0.1, 'max_depth': 7}
+2025-06-15 23:26:51,758 - INFO - Resultados de XGBoost en conjunto de prueba:
+2025-06-15 23:26:51,759 - INFO -   Accuracy: 0.8077
+2025-06-15 23:26:51,762 - INFO -   F1 Score (Weighted): 0.8077
+2025-06-15 23:26:51,763 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.89      0.89       182
+           1       0.23      0.23      0.23        26
+
+    accuracy                           0.81       208
+   macro avg       0.56      0.56      0.56       208
+weighted avg       0.81      0.81      0.81       208
+
+2025-06-15 23:26:51,767 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:26:51,770 - INFO -     Promedio: 1.0000
+2025-06-15 23:26:51,773 - INFO -     Aceleracion_promedio: 0.5030
+2025-06-15 23:26:51,774 - INFO -     Curso_4to A: 0.3374
+2025-06-15 23:26:51,775 - INFO -     Tendencia_promedio: 0.3235
+2025-06-15 23:26:51,777 - INFO -     Curso_1ro B: 0.2901
+2025-06-15 23:26:51,780 - INFO -     Primer_Anio: 0.2717
+2025-06-15 23:26:51,782 - INFO -     Curso_5to A: 0.2706
+2025-06-15 23:26:51,783 - INFO -     Promedio_ultimos_3: 0.2621
+2025-06-15 23:26:51,785 - INFO -     Curso_3ro A: 0.2554
+2025-06-15 23:26:51,786 - INFO -     Curso_2do A: 0.2500
+2025-06-15 23:26:51,787 - INFO - --- Optimizando hiperparámetros para Gradient Boosting ---
+2025-06-15 23:26:51,790 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:26:58,743 - INFO - Mejores parámetros para Gradient Boosting: {'learning_rate': 0.05, 'n_estimators': 200}
+2025-06-15 23:26:58,773 - INFO - Resultados de Gradient Boosting en conjunto de prueba:
+2025-06-15 23:26:58,774 - INFO -   Accuracy: 0.8702
+2025-06-15 23:26:58,775 - INFO -   F1 Score (Weighted): 0.8298
+2025-06-15 23:26:58,778 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.98      0.93       182
+           1       0.40      0.08      0.13        26
+
+    accuracy                           0.87       208
+   macro avg       0.64      0.53      0.53       208
+weighted avg       0.82      0.87      0.83       208
+
+2025-06-15 23:26:58,786 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:26:58,788 - INFO -     Promedio: 1.0000
+2025-06-15 23:26:58,790 - INFO -     Promedio_global: 0.4759
+2025-06-15 23:26:58,792 - INFO -     Promedio_ultimos_3: 0.3214
+2025-06-15 23:26:58,794 - INFO -     Delta_promedio: 0.2598
+2025-06-15 23:26:58,798 - INFO -     Primer_Anio: 0.1941
+2025-06-15 23:26:58,799 - INFO -     Aceleracion_promedio: 0.1618
+2025-06-15 23:26:58,801 - INFO -     Genero_M: 0.1612
+2025-06-15 23:26:58,804 - INFO -     Curso_5to B: 0.1173
+2025-06-15 23:26:58,806 - INFO -     Variabilidad_promedio: 0.1150
+2025-06-15 23:26:58,809 - INFO -     Curso_2do A: 0.1025
+2025-06-15 23:26:58,809 - INFO - --- Optimizando hiperparámetros para SVM ---
+2025-06-15 23:26:58,811 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:27:02,877 - INFO - Mejores parámetros para SVM: {'C': 10, 'gamma': 0.1}
+2025-06-15 23:27:02,932 - INFO - Resultados de SVM en conjunto de prueba:
+2025-06-15 23:27:02,933 - INFO -   Accuracy: 0.8077
+2025-06-15 23:27:02,934 - INFO -   F1 Score (Weighted): 0.8160
+2025-06-15 23:27:02,936 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.87      0.89       182
+           1       0.28      0.35      0.31        26
+
+    accuracy                           0.81       208
+   macro avg       0.59      0.61      0.60       208
+weighted avg       0.83      0.81      0.82       208
+
+2025-06-15 23:27:02,938 - INFO - --- Optimizando hiperparámetros para MLP ---
+2025-06-15 23:27:02,940 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:27:04,044 - INFO - Mejores parámetros para MLP: {'alpha': 0.0001, 'hidden_layer_sizes': (100,)}
+2025-06-15 23:27:04,078 - INFO - Resultados de MLP en conjunto de prueba:
+2025-06-15 23:27:04,079 - INFO -   Accuracy: 0.8654
+2025-06-15 23:27:04,081 - INFO -   F1 Score (Weighted): 0.8119
+2025-06-15 23:27:04,082 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.99      0.93       182
+           1       0.00      0.00      0.00        26
+
+    accuracy                           0.87       208
+   macro avg       0.44      0.49      0.46       208
+weighted avg       0.76      0.87      0.81       208
+
+2025-06-15 23:27:04,084 - INFO - --- Optimizando hiperparámetros para LightGBM ---
+2025-06-15 23:27:04,085 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:27:11,636 - INFO - Mejores parámetros para LightGBM: {'learning_rate': 0.1, 'num_leaves': 50}
+2025-06-15 23:27:11,678 - INFO - Resultados de LightGBM en conjunto de prueba:
+2025-06-15 23:27:11,679 - INFO -   Accuracy: 0.8317
+2025-06-15 23:27:11,680 - INFO -   F1 Score (Weighted): 0.8239
+2025-06-15 23:27:11,683 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.92      0.91       182
+           1       0.29      0.23      0.26        26
+
+    accuracy                           0.83       208
+   macro avg       0.59      0.57      0.58       208
+weighted avg       0.82      0.83      0.82       208
+
+2025-06-15 23:27:11,687 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:27:11,689 - INFO -     Promedio: 1.0000
+2025-06-15 23:27:11,692 - INFO -     Promedio_ultimos_3: 0.9611
+2025-06-15 23:27:11,695 - INFO -     Promedio_global: 0.7436
+2025-06-15 23:27:11,699 - INFO -     Variabilidad_promedio: 0.6966
+2025-06-15 23:27:11,701 - INFO -     Aceleracion_promedio: 0.5799
+2025-06-15 23:27:11,704 - INFO -     Primer_Anio: 0.5450
+2025-06-15 23:27:11,706 - INFO -     Delta_promedio: 0.4980
+2025-06-15 23:27:11,708 - INFO -     Años_en_sistema: 0.3356
+2025-06-15 23:27:11,710 - INFO -     Tendencia_promedio: 0.2993
+2025-06-15 23:27:11,711 - INFO -     Curso_2do A: 0.1866
+2025-06-15 23:27:11,713 - INFO - --- Optimizando hiperparámetros para CatBoost ---
+2025-06-15 23:27:11,715 - INFO - Usando TimeSeriesSplit con 5 divisiones para validación cruzada
+2025-06-15 23:27:40,962 - INFO - Mejores parámetros para CatBoost: {'depth': 4, 'learning_rate': 0.05}
+2025-06-15 23:27:40,995 - INFO - Resultados de CatBoost en conjunto de prueba:
+2025-06-15 23:27:40,996 - INFO -   Accuracy: 0.8510
+2025-06-15 23:27:40,998 - INFO -   F1 Score (Weighted): 0.8408
+2025-06-15 23:27:41,002 - INFO -   Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.93      0.92       182
+           1       0.37      0.27      0.31        26
+
+    accuracy                           0.85       208
+   macro avg       0.63      0.60      0.61       208
+weighted avg       0.83      0.85      0.84       208
+
+2025-06-15 23:27:41,004 - INFO -   Importancia de características (Top 10, Normalizada 0-1):
+2025-06-15 23:27:41,006 - INFO -     Promedio_global: 1.0000
+2025-06-15 23:27:41,011 - INFO -     Promedio_ultimos_3: 0.9348
+2025-06-15 23:27:41,013 - INFO -     Promedio: 0.8850
+2025-06-15 23:27:41,019 - INFO -     Años_en_sistema: 0.7833
+2025-06-15 23:27:41,022 - INFO -     Primer_Anio: 0.7328
+2025-06-15 23:27:41,024 - INFO -     Delta_promedio: 0.5282
+2025-06-15 23:27:41,024 - INFO -     Aceleracion_promedio: 0.5063
+2025-06-15 23:27:41,027 - INFO -     Variabilidad_promedio: 0.3883
+2025-06-15 23:27:41,030 - INFO -     Curso_2do A: 0.2827
+2025-06-15 23:27:41,034 - INFO -     Tendencia_promedio: 0.2678
+2025-06-15 23:27:41,037 - INFO - 
+--- Mejor modelo seleccionado: CatBoost ---
+2025-06-15 23:27:41,038 - INFO - Basado en F1 Score (Weighted): 0.8408
+2025-06-15 23:27:41,040 - INFO - 
+Evaluando robustez de CatBoost con validación cruzada...
+2025-06-15 23:27:53,322 - INFO - CV Accuracy: 0.9182 (±0.0226)
+2025-06-15 23:28:05,073 - INFO - CV F1: 0.9149 (±0.0222)
+2025-06-15 23:28:16,688 - INFO - CV Precision: 0.9127 (±0.0230)
+2025-06-15 23:28:28,358 - INFO - CV Recall: 0.9182 (±0.0226)
+2025-06-15 23:28:28,362 - INFO - 
+Resumen de métricas de todos los modelos:
+                Modelo  Accuracy  F1_Weighted  Precision_Weighted  Recall_Weighted
+0  Logistic Regression  0.701923     0.752104            0.889228         0.701923
+1        Random Forest  0.870192     0.814267            0.765097         0.870192
+2              XGBoost  0.807692     0.807692            0.807692         0.807692
+3    Gradient Boosting  0.870192     0.829765            0.821552         0.870192
+4                  SVM  0.807692     0.816028            0.825639         0.807692
+5                  MLP  0.865385     0.811856            0.764563         0.865385
+6             LightGBM  0.831731     0.823920            0.817131         0.831731
+7             CatBoost  0.850962     0.840776            0.833090         0.850962
+2025-06-15 23:28:28,364 - INFO - Entrenamiento y evaluación de modelos completado.
+2025-06-15 23:28:28,367 - INFO - Generando visualizaciones...
+2025-06-15 23:28:28,731 - INFO - Gráfico de comparación de modelos guardado como model_comparison.png
+2025-06-15 23:28:29,135 - INFO - Curva ROC guardada como roc_curve_CatBoost.png
+2025-06-15 23:28:29,473 - INFO - Curva Precision-Recall guardada como precision_recall_curve_CatBoost.png
+2025-06-15 23:28:29,887 - INFO - Matriz de confusión guardada como confusion_matrix_CatBoost.png
+2025-06-15 23:28:30,350 - INFO - Comparación de curvas ROC guardada como roc_curves_comparison.png
+2025-06-15 23:28:30,673 - INFO - Visualizaciones generadas.
+2025-06-15 23:28:30,946 - INFO - Gráfico de resultados de validación cruzada guardado como cross_validation_results.png
+2025-06-15 23:28:31,168 - INFO - Iniciando proyección de tendencias para 3 años...
+2025-06-15 23:28:31,170 - INFO - Proyectando desde 2025 hasta 2031
+2025-06-15 23:28:31,174 - INFO - Año base (2024): 31 reprobados (reales)
+2025-06-15 23:28:31,177 - INFO - Proyectando para el año: 2025
+2025-06-15 23:28:31,179 - INFO - Iniciando creación de características...
+2025-06-15 23:28:31,497 - INFO - Creación de características completada.
+2025-06-15 23:28:31,540 - INFO - Año 2025: 23 reprobados (predicción)
+2025-06-15 23:28:31,558 - INFO - Proyectando para el año: 2026
+2025-06-15 23:28:31,561 - INFO - Iniciando creación de características...
+2025-06-15 23:28:31,876 - INFO - Creación de características completada.
+2025-06-15 23:28:31,917 - INFO - Año 2026: 17 reprobados (predicción)
+2025-06-15 23:28:31,932 - INFO - Proyectando para el año: 2027
+2025-06-15 23:28:31,935 - INFO - Iniciando creación de características...
+2025-06-15 23:28:32,243 - INFO - Creación de características completada.
+2025-06-15 23:28:32,285 - INFO - Año 2027: 12 reprobados (predicción)
+2025-06-15 23:28:32,304 - INFO - Proyectando para el año: 2028
+2025-06-15 23:28:32,306 - INFO - Iniciando creación de características...
+2025-06-15 23:28:32,607 - INFO - Creación de características completada.
+2025-06-15 23:28:32,647 - INFO - Año 2028: 15 reprobados (predicción)
+2025-06-15 23:28:32,677 - INFO - Proyectando para el año: 2029
+2025-06-15 23:28:32,678 - INFO - Iniciando creación de características...
+2025-06-15 23:28:32,988 - INFO - Creación de características completada.
+2025-06-15 23:28:33,027 - INFO - Año 2029: 14 reprobados (predicción)
+2025-06-15 23:28:33,045 - INFO - Proyectando para el año: 2030
+2025-06-15 23:28:33,046 - INFO - Iniciando creación de características...
+2025-06-15 23:28:33,347 - INFO - Creación de características completada.
+2025-06-15 23:28:33,387 - INFO - Año 2030: 10 reprobados (predicción)
+2025-06-15 23:28:33,406 - INFO - Generando gráfico de proyección de reprobaciones...
+2025-06-15 23:28:33,642 - INFO - Gráfico de proyección guardado como future_projection.png
+2025-06-15 23:28:33,871 - INFO - Predicciones futuras detalladas guardadas en 'predicciones_futuras_detalladas.csv'
+2025-06-15 23:28:33,873 - INFO - Iniciando creación de características...
+2025-06-15 23:28:34,338 - INFO - Creación de características completada.
+2025-06-15 23:28:34,339 - INFO - Identificando estudiantes en riesgo para el próximo año...
+2025-06-15 23:28:34,344 - INFO - Iniciando creación de características...
+2025-06-15 23:28:34,676 - INFO - Creación de características completada.
+2025-06-15 23:28:34,695 - INFO - Ajustando predicciones para 63 estudiantes nuevos
+2025-06-15 23:28:34,703 - INFO - Distribución de niveles de riesgo:
+Nivel_Riesgo
+Bajo        247
+Medio        13
+Alto         10
+Muy Alto     10
+2025-06-15 23:28:34,713 - INFO - Generando visualizaciones de distribución de riesgo...
+2025-06-15 23:28:34,956 - INFO - Gráfico de distribución de riesgo guardado como risk_distribution.png
+2025-06-15 23:28:35,427 - INFO - Gráfico de distribución de riesgo por género guardado como risk_distribution_gender.png
+2025-06-15 23:28:36,065 - INFO - Gráfico de distribución de riesgo por nivel guardado como risk_distribution_level.png
+2025-06-15 23:28:36,310 - INFO - Identificación de estudiantes en riesgo completada.
+2025-06-15 23:28:36,311 - INFO - Preparando perfiles de intervención para los 50 estudiantes de mayor riesgo...
+2025-06-15 23:28:36,317 - INFO - Seleccionados 20 estudiantes con riesgo Alto o Muy Alto (máximo 50).
+2025-06-15 23:28:36,334 - INFO - Perfiles de intervención preparados.
+2025-06-15 23:28:36,336 - INFO - 
+--- Resumen de Estudiantes en Riesgo (Próximo Año, Top 10) ---
+2025-06-15 23:28:36,345 - INFO - 
+           Codigo Rude  Probabilidad_Reprobacion Genero       Nivel  Curso  Promedio_Actual  Reprobaciones_acumuladas  Años_en_sistema  Volatilidad_rendimiento Nivel_Riesgo
+2523   719500632017028                  0.993296      F  Secundaria  1ro A               68                         0                1                      0.0     Muy Alto
+1347  519500012021961A                  0.981703      M    Primario  2do A               56                         0                1                      0.0     Muy Alto
+2568   719500632014457                  0.971143      F  Secundaria  3ro A               68                         0                1                      0.0     Muy Alto
+2578   719500632014990                  0.970882      M  Secundaria  3ro A               56                         1                1                      0.0     Muy Alto
+2543   519500012017009                  0.944964      M  Secundaria  1ro A               56                         1                1                      0.0     Muy Alto
+2593   719500632013951                  0.932651      F  Secundaria  4to A               69                         0                1                      0.0     Muy Alto
+2559   519500012016009                  0.841251      M  Secundaria  2do A               57                         1                1                      0.0     Muy Alto
+1355  7195006820213855                  0.813591      F    Primario  2do A               57                         0                1                      0.0     Muy Alto
+1369  5195000120232293                  0.813591      F    Primario  2do A               57                         0                1                      0.0     Muy Alto
+2524   819812082016052                  0.755049      M  Secundaria  1ro A               57                         1                1                      0.0     Muy Alto
+2025-06-15 23:28:36,352 - INFO - Lista completa de estudiantes en riesgo guardada en 'estudiantes_en_riesgo.csv'
+2025-06-15 23:28:36,354 - INFO - 
+--- Resumen de Perfiles de Intervención (Prioritarios, Top 5) ---
+2025-06-15 23:28:36,360 - INFO - 
+        Codigo Rude       Nivel  Curso  Probabilidad_Reprobacion Nivel_Riesgo                                            Razones_Riesgo                                                                      Intervenciones_Recomendadas
+0   719500632017028  Secundaria  1ro A                  0.993296     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+1  519500012021961A    Primario  2do A                  0.981703     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+2   719500632014457  Secundaria  3ro A                  0.971143     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+3   719500632014990  Secundaria  3ro A                  0.970882     Muy Alto  Promedio bajo (<70), Rendimiento bajo vs curso (<-5 pts)  Refuerzo académico específico, Integración a grupos de estudio, Monitoreo continuo del progreso
+4   519500012017009  Secundaria  1ro A                  0.944964     Muy Alto                                       Promedio bajo (<70)                                   Refuerzo académico específico, Monitoreo continuo del progreso
+2025-06-15 23:28:36,366 - INFO - Perfiles de intervención completos guardados en 'perfiles_intervencion.csv'
+2025-06-15 23:28:36,378 - INFO - DataFrame con detalles y predicciones del próximo año guardado en 'predicciones_completas_proximo_año.csv'
+2025-06-15 23:28:36,380 - INFO - --- FIN DEL PROCESO ---
