@@ -100,6 +100,8 @@ También se puede **clonar el repositorio** y ejecutar el notebook directamente,
 - Se sugiere que esta debilidad puede deberse a la falta de variables socioeconómicas, familiares o emocionales en el conjunto de datos.
 
 ---
+## 📉 Tableau public
+- Para ejecutar el documento tableau public, solo se debe abrir de archivo contenido en graficos/tableau/Proyecto Final Tableau.twbx
 
 ## 💼 Recomendaciones
 - Incluir variables no académicas para mejorar la capacidad predictiva del modelo.
